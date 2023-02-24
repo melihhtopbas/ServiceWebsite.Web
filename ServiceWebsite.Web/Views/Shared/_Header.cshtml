@@ -1,0 +1,141 @@
+﻿<!-- fullscreen-menu starts
+      ============================================ -->
+<div class="fullscreen-menu text-right">
+    <div class="container">
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <a href="javascript:void(0)" class="close-menu">
+                    <i class="icon-Cross"></i>
+                </a>
+                <!-- End of .close-menu -->
+
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.HomePage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "About", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Service", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.ServiceList</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Blog",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Faq",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Contact",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.Contact</a>
+                    </li>
+                    <li>
+                        <a class="primary-btn" href="@Url.Action("Index","Start",new {Area="App"})">Sitenizi Kontrol Edin</a>
+                    </li>
+                    <li>
+                        <a class="primary-btn" href="@Url.Action("Index","Login",new {Area="Admin"})">Giriş Yap</a>
+                    </li>
+                    <li class="nav-social-links d-flex justify-content-end">
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Facebook))
+                        {
+                            <a class="c-facebook" href="@SettingViewModel.Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Twitter))
+                        {
+                            <a class="c-twitter" href="@SettingViewModel.Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Gplus))
+                        {
+                            <a class="c-google-plus" href="@SettingViewModel.Gplus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Youtube))
+                        {
+                            <a class="c-youtube" href="@SettingViewModel.Youtube">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        }
+                    </li>
+                    <!-- End of .nav-social-links -->
+                </ul>
+                <!-- End of .navbar-nav -->
+            </nav>
+            <!-- End of .navbar -->
+        </div>
+        <!-- End of .navbar-wrapper -->
+    </div>
+    <!-- End of .container -->
+</div>
+<!-- End of .fullscreen-menu -->
+<!-- navbar starts
+============================================ -->
+<div class="header-wrapper fixed-top">
+    <div class="header-top d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-sm-4 text-sm-left">
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home", new {lang = ViewBag.CurrentCultureTwoLetter})">
+                        <img src="@SettingViewModel.Logo" alt="brand logo">
+                        
+                    </a>
+                    <!-- End of .navbar-brand -->
+                </div>
+                <!-- End of .col-4 -->
+
+                <div class="ht-right col-sm d-flex align-items-center justify-content-center justify-content-sm-end">
+                    <a href="tel:@SettingViewModel.Phone" class="contact-numb">
+                        <i class="grad-icon icon-Phone"></i>
+                        <span>@SettingViewModel.Phone</span>
+                    </a>
+
+                    <a class="primary-btn" href="@Url.Action("Index","Start",new {Area="App"})">Sitenizi Kontrol Edin</a>
+                    <a class="mm-toggler navbar-toggler" href="#">
+                        <span class="toggler-icon bar1"></span>
+                        <span class="toggler-icon bar2"></span>
+                        <span class="toggler-icon bar3"></span>
+                    </a>
+                </div>
+                <!-- End of .col-auto -->
+            </div>
+            <!-- End of row -->
+        </div>
+        <!-- End of .container -->
+    </div>
+    <!-- End of .header-top -->
+    <!-- Nav starts -->
+    <nav class="navbar navbar-toggleable-md align-items-center navbar-expand-lg hidden-lg-down">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex w-100 align-items-center justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.HomePage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "About", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Service", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.ServiceList</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Blog",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Faq",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index","Contact",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- End of .container -->
+    </nav>
+    <!-- End of nav -->
+</div>
+<!-- End of .header-wrapper -->

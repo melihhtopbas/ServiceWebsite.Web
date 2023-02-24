@@ -1,0 +1,52 @@
+﻿
+@{
+   
+    Layout = null;
+}
+@model ServiceWebsite.ViewModels.WebSite.SearchControlModel
+
+<div class="" id="analysisPart">
+    <figure><img src="/Content/img/balance.png" alt="" class="img-fluid"></figure>
+    <h1 style="color: white">ANALİZ SONUCU</h1>
+
+
+    <div class="box_style_2">
+        @foreach (var item in Model.Keywords)
+        {
+            if (item.IsAvailable)
+            {
+                <div class="alert alert-success">
+
+                    <h4>@item.Name</h4>
+                    WEB SAYFANIZDA @item.Name MEVCUT.
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-danger">
+
+
+                    <h4>@item.Name</h4>
+                    WEB SAYFANIZDA @item.Name BULUNAMADI.
+                </div>
+
+            }
+        }
+
+
+    </div>
+    <div class="input-group mb-3 rounded">
+        <div class="row">
+            <div class="col-md-3">
+                <a class="btn btn-success"  href="@Url.Action("Index","Information",new {websiteId=Model.WebsiteId})">Online Hazırla</a>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                <a class="btn btn-danger center"  href="@Url.Action("Index","Contact")" >Avukata Danış</a>
+
+            </div>
+        </div>
+   
+    </div>
+
+</div>

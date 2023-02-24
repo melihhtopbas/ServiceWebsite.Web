@@ -1,0 +1,36 @@
+﻿@model ServiceWebsite.ViewModels.Common.ImageViewModel
+@{
+    var htmlFieldPrefix = ViewData.TemplateInfo.HtmlFieldPrefix;
+    if (!String.IsNullOrWhiteSpace(htmlFieldPrefix))
+    {
+        htmlFieldPrefix = htmlFieldPrefix + ".";
+    }
+}
+<li class="remove-img">
+    @using (Html.BeginCollectionItem(htmlFieldPrefix + "ImageViewModels"))
+    {
+        if (!string.IsNullOrWhiteSpace(Model.ServiceUniqueTempId))
+        {
+            <img src="@Url.Content(SystemConstants.ServiceTempImageThumbPath + Model.ServiceUniqueTempId + "/" + Model.FileName)" width="50" height="50" />
+        }
+        else
+        {
+            <img src="@Url.Content(String.Format(SystemConstants.ServiceImageThumbPath) + "/" + Model.FileName)" width="50" height="50" />
+
+        }
+        @Html.HiddenFor(a => a.FileName)
+        @Html.HiddenFor(a => a.Alt)
+        @Html.HiddenFor(a => a.Title)
+
+
+    }
+
+</li>
+
+<script>
+
+    $(".remove-img").click(function () {
+
+        $(this).remove();
+    });
+</script>

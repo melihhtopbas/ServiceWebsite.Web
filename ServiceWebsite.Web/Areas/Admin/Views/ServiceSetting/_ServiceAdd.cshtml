@@ -1,0 +1,125 @@
+﻿@model ServiceWebsite.ViewModels.Admin.ServiceAddViewModel
+@using (Html.BeginForm("Add", "ServiceSetting", new { Area = String.Empty }, FormMethod.Post, new { id = "serviceAddForm", role = "form" }))
+{
+    <style>
+      form  ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+          
+        }
+
+      form li {
+            float: left;
+        }
+
+        form li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+      form li a:hover {
+            background-color: #111111;
+        }
+    </style>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.LanguageId, new { data_val = "false" })
+            @Html.HiddenFor(m => m.ServiceUniqueTempId, new { data_val = "false" })
+            @Html.RenderValidationSummary(true)
+        </div>
+    </div>
+
+    <div class="row">
+
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="row">
+                @Html.EditorFor(m => m.Category)
+            </div>
+        </div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-6 col-lg-6 @Html.ModelStateFor(m => m.Name)">
+            @Html.TextBoxBlockLabelAsAddonFor(m => m.Name, new { @class = "show-maxlength", autofocus = "true" })
+        </div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-12 col-lg-12 @Html.ModelStateFor(m => m.ShortDescription)">
+            @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control", rows = "2", placeholder = HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.ShortDescription).ToString()) })
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="row">
+                <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <a class="btn btn-default btn-sm"
+                       data-modal-form="true"
+                       data-modal-size="modal-lg"
+                       data-modal-title="Resim Ekle"
+                       data-hook-beforeunload="true"
+                       data-modal-prepend="ul#imageList"
+                       href="@Url.Action("ServiceImageAdd", "ServiceSetting", routeValues: new {Area ="Admin",htmlPrefix=ViewData.TemplateInfo.HtmlFieldPrefix,serviceUniqueTempId=Model.ServiceUniqueTempId})">
+                        <i class="fa fa-plus"></i>Resim Ekle
+                    </a>
+
+                    <ul id="imageList">
+                        @foreach (var entry in Model.ImageViewModels)
+                        {
+                            @Html.Partial("~/Areas/Admin/Views/ServiceSetting/DisplayTemplates/ImageViewModel.cshtml", entry)
+                        }
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
+            @Html.Label("Icon")
+            @Html.TextBox("Icon", null, new { @class = "form-control", type = "file" })
+
+        </div>
+
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+        </div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-6 col-lg-6 @Html.ModelStateFor(m => m.SeoTitle)">
+            @Html.TextBoxBlockLabelAsAddonFor(m => m.SeoTitle, new { @class = "show-maxlength" })
+        </div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-6 col-lg-6 @Html.ModelStateFor(m => m.SeoKeywords)">
+            @Html.TextBoxBlockLabelAsAddonFor(m => m.SeoKeywords, new { @class = "show-maxlength", data_role = "tagsinput" })
+        </div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-12 col-lg-12 @Html.ModelStateFor(m => m.SeoDescription)">
+            @Html.TextAreaFor(m => m.SeoDescription, new { @class = "form-control", rows = "2", placeholder = HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.SeoDescription).ToString()) })
+        </div>
+        <div class="form-group form-group-sm col-xs-12 @Html.ModelStateFor(m => m.Active)">
+            <div class="input-group input-group-sm">
+                @Html.CheckBoxFor(m => m.Active,
+                    new
+                    {
+                        data_make_switchery_small = "true",
+                        @class = "form-control",
+                        data_val = "true"
+                    })
+                <span class="margin-left5">@Html.DisplayNameFor(m => m.Active)</span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-12 col-lg-12 @Html.ModelStateFor(m => m.Description)">
+            <div class="input-group input-group-sm">
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = "5", data_make_cke = "true", placeholder = HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.Description).ToString()) })
+            </div>
+            @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+    <hr />
+    <div class="form-group form-group-sm row">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary pull-right margin-left10"><span class="fa fa-check"></span>&nbsp;&nbsp;Kaydet</button>
+            <button class="btn btn-danger pull-right" type="button" data-dismiss="modal"><span class="fa fa-times"></span>&nbsp;&nbsp;İptal</button>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+}

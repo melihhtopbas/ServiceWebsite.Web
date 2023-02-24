@@ -1,0 +1,37 @@
+﻿
+@model ServiceWebsite.ViewModels.Admin.CustomerCommentListViewModel
+<tr id="@("customercomment_"+Model.Id)" class="master-row">
+    <td>
+        <img src="@Url.Content(String.Format(SystemConstants.CustomerCommentImageThumbPath) + "/" + Model.MainImage)" />
+    </td>
+    
+    <td>@Model.Name</td>
+
+    <td style="width:50px">
+        <a data-modal-form="true"
+           data-modal-size="modal-lg"
+           data-modal-update="#customercomment_@Model.Id"
+           data-modal-highlight="#customercomment_@Model.Id"
+           data-modal-title="Yorum Düzenle"
+           data-hook-beforeunload="true"
+           class="btn btn-block btn-success btn-sm"
+           href="@Url.Action("Edit", "CustomerCommentSetting", routeValues: new {Area = "Admin",customercommentId=Model.Id})">
+            <i class="fa fa-edit fa-fw text-success"></i> Yorum Düzenle
+        </a>
+
+    </td>
+    <td style="width:50px">
+        <a href="javascript:void(0);"
+           data-toggle="confirmation"
+           title="Emin Misiniz"
+           data-btn-ok-label="Evet"
+           data-btn-cancel-label="Hayır"
+           data-placement="top"
+           data-customercomment-id="@Model.Id"
+           data-on-confirm="deleteCustomerComment"
+           class="btn btn-block btn-danger btn-sm">
+            <i class="fa fa-trash fa-fw text-danger"></i> Yorum Sil
+        </a>
+
+    </td>
+</tr>

@@ -1,0 +1,101 @@
+﻿@model ServiceWebsite.ViewModels.Admin.KeywordAddViewModel
+@using (Html.BeginForm("Add", "KeywordSetting", new { Area = String.Empty }, FormMethod.Post, new { id = "KeywordAddForm", role = "form" }))
+{
+    <style>
+      form  ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        
+        }
+
+      form li {
+            float: left;
+        }
+
+        form li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+      form li a:hover {
+            background-color: #111111;
+        }
+    </style>
+    <div class="row">
+        <div class="col-xs-12">
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.LanguageId, new { data_val = "false" }) 
+            @Html.RenderValidationSummary(true)
+        </div>
+    </div>
+
+    <div class="row">
+
+
+
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-6 col-lg-6 @Html.ModelStateFor(m => m.Name)">
+            @Html.TextBoxBlockLabelAsAddonFor(m => m.Name, new { @class = "show-maxlength", autofocus = "true" })
+        </div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-6 col-md-6 col-lg-4 @Html.ModelStateFor(m => m.Price)">
+            @Html.TextBoxDecimalBlockLabelAsAddonFor(m => m.Price, "{0:N2}")
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group form-group-sm col-xs-12 col-sm-12 col-md-12 col-lg-12 @Html.ModelStateFor(m => m.DocumentTemplate)">
+            <div class="input-group input-group-sm">
+                @Html.TextAreaFor(m => m.DocumentTemplate, new { @class = "form-control", rows = "5", data_make_cke = "true", placeholder = HttpUtility.HtmlDecode(Html.DisplayNameFor(m => m.DocumentTemplate).ToString()) })
+            </div>
+            @Html.ValidationMessageFor(m => m.DocumentTemplate, "", new { @class = "text-danger" })
+        </div>
+
+        <hr />
+        <button type="button" onclick="addSearchKeyword();" data-toggle="tooltip" title="Add" class="btn btn-xs btn-primary" data-original-title="Add">Aranacak Kelime Ekle</button>
+        <div class="clearfix"></div>
+
+        <ul id="searchKeyword-list" style="list-style: none">
+
+            @foreach (var searchKeywordViewModel in Model.SearchKeywordViewModels)
+            {
+                @Html.Partial("~/Areas/Admin/Views/KeywordSetting/SearchKeyword.cshtml", searchKeywordViewModel)
+            }
+
+        </ul>
+    </div>
+
+    <hr />
+
+    <div class="form-group form-group-sm row">
+        <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary pull-right margin-left10"><span class="fa fa-check"></span>&nbsp;&nbsp;Kaydet</button>
+            <button class="btn btn-danger pull-right" type="button" data-dismiss="modal"><span class="fa fa-times"></span>&nbsp;&nbsp;İptal</button>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.js"></script>
+}
+<script>
+
+    function addSearchKeyword() {
+
+        var searchKeywordLinesContainer = $('#searchKeyword-list');
+        var urlSearchKeywords = '@Url.Action("SearchKeywordViewModelPartial", "KeywordSetting", new {Area=string.Empty, htmlPrefix = @ViewData.TemplateInfo.HtmlFieldPrefix })';
+        $.get(urlSearchKeywords, function(template) {
+            var $el = $(template);
+            $el.find('input[type="checkbox"][data-make-switchery-small="true"]').each(function () {
+                var switchery = new Switchery(this, { size: 'small', secondaryColor: "#d9534f" });
+
+            });
+            searchKeywordLinesContainer.prepend($el);
+            $el.animateInsert();
+
+        });
+    }
+
+    
+
+</script>

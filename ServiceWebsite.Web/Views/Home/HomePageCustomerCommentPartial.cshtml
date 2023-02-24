@@ -1,0 +1,49 @@
+﻿@model List<ServiceWebsite.ViewModels.WebSite.CustomerCommentListViewModel>
+
+<div class="testimonial_area">
+    <div class="container">
+        <div class="row">
+            <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner wow fadeInUp" role="listbox">
+                    <!--START SINGLE TESTIMONIAL AREA-->
+                    @foreach (var item in Model)
+                    {
+                        if (item == Model.FirstOrDefault())
+                        {
+                            <div class="item active">
+                                <div class="single_testimonial">
+                                    <div class="col-sm-12">
+                                        <div class="testimonial_content text-center">
+                                            @Html.Raw(item.Comment)
+                                            <h3>@item.Name</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="item">
+                                <div class="single_testimonial">
+                                    <div class="col-sm-12">
+                                        <div class="testimonial_content text-center">
+                                            @Html.Raw(item.Comment)
+                                            <h3>@item.Name</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    <!--/END SINGLE TESTIMONIAL AREA-->
+
+                </div>
+                <!-- Left and right controls -->
+                <a class="left-control carousel-control" href="#myCarousel2" role="button" data-slide="prev"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a>
+                <a class="right-control carousel-control" href="#myCarousel2" role="button" data-slide="next"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+            </div>
+            <!--/END SLIDER AREA -->
+        </div>
+    </div>
+</div>

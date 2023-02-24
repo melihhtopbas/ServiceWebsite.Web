@@ -1,0 +1,23 @@
+﻿@model ServiceWebsite.ViewModels.WebSite.ServiceDetailViewModel
+    @{ Layout = null;}
+<div class="row">
+    <div class="col-sm-5">
+
+        <div class="modal-carousel owl-carousel owl-theme">
+            @foreach (var image in Model.ImageList)
+            {
+                <div class="item">
+                    <figure><img class="img-responsive" src="@Url.Content(String.Format(SystemConstants.ServiceImagePath) + "/" +image.FileName)" alt="@image.Alt" title="@image.Alt"></figure>
+                </div>
+            }
+            </div><!-- /.modal-carousel -->
+    </div>
+    <div class="col-sm-7">
+        <div class="product-info">
+            <h4 class="font-20-for-reg-0">@Model.Name</h4>
+            <h4 class="font-16-for-reg-0">@WebSiteViewItems.PopularCategories <span>@Model.CategoryName</span></h4>
+            <p class="font-16-for-reg-0">@Model.ShortDescription</p>
+            <a href="@Url.Action("ServiceDetail","Service",new{link=Model.Link,lang=ViewBag.CurrentCultureTwoLetter})" class="btn btn-lg btn-danger">@WebSiteViewItems.ReadMore</a>
+        </div><!-- /.product-info -->
+    </div>
+</div>

@@ -1,0 +1,32 @@
+﻿@model ServiceWebsite.ViewModels.WebSite.ServiceDetailViewModel
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    SettingViewModel.SeoTitle = Model.SeoTitle;
+    SettingViewModel.SeoDescription = Model.SeoDescription;
+    SettingViewModel.SeoKeywords = Model.SeoKeywords;
+}
+<section class="section drive-trafic">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>
+                 <span>@Model.Name</span>
+            </h2>
+            <p>@Model.CategoryName</p>
+        </div>
+        <!-- End of .section-heading -->
+        <p class="text-center">
+           @Html.Raw(Model.Description)
+        </p>
+    </div>
+    <!-- End of .container -->
+</section>
+<!-- End of .drive-trafic -->
+<!-- Work-process starts
+============================================ -->
+ 
+<!-- End of .work-process -->
+ 
+ 
+ 
+@{Html.RenderAction("HomePageReferences", "Home"); }

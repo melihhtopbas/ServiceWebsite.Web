@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ServiceWebsite.ViewModels.Admin.SearchKeywordViewModel>
+@if (Model != null)
+{
+    foreach (var searchKeywordViewModel   in Model)
+    {
+        <li>
+             @Html.Partial("~/Areas/Admin/Views/KeywordSetting/SearchKeyword.cshtml", searchKeywordViewModel)
+        </li>
+    }
+
+}

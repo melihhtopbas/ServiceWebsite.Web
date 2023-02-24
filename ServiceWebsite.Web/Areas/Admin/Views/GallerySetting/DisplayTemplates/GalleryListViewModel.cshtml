@@ -1,0 +1,37 @@
+﻿
+@model ServiceWebsite.ViewModels.Admin.GalleryListViewModel
+<tr id="@("gallery_"+Model.Id)" class="master-row">
+    <td>
+        <img src="@Url.Content(String.Format(SystemConstants.GalleryImageThumbPath) + "/" + Model.MainImage)" />
+    </td>
+    
+    <td>@Model.Name</td>
+
+    <td style="width:50px">
+        <a data-modal-form="true"
+           data-modal-size="modal-lg"
+           data-modal-update="#gallery_@Model.Id"
+           data-modal-highlight="#gallery_@Model.Id"
+           data-modal-title="Özellik Düzenle"
+           data-hook-beforeunload="true"
+           class="btn btn-block btn-success btn-sm"
+           href="@Url.Action("Edit", "GallerySetting", routeValues: new {Area = "Admin",galleryId=Model.Id})">
+            <i class="fa fa-edit fa-fw text-success"></i> Fotograf Düzenle
+        </a>
+
+    </td>
+    <td style="width:50px">
+        <a href="javascript:void(0);"
+           data-toggle="confirmation"
+           title="Emin Misiniz"
+           data-btn-ok-label="Evet"
+           data-btn-cancel-label="Hayır"
+           data-placement="top"
+           data-gallery-id="@Model.Id"
+           data-on-confirm="deleteGallery"
+           class="btn btn-block btn-danger btn-sm">
+            <i class="fa fa-trash fa-fw text-danger"></i> Fotograf Sil
+        </a>
+
+    </td>
+</tr>

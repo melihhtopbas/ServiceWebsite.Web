@@ -1,0 +1,39 @@
+﻿@model List<ServiceWebsite.ViewModels.WebSite.ServiceListViewModel>
+
+<!-- services starts
+  ============================================ -->
+<section class="section services grey-bg">
+    <div class="container-fluid p-sm-0">
+        <div class="section-heading text-center">
+            <h2>
+                KVKK
+                <span>@WebSiteViewItems.ServiceList</span>
+            </h2>
+            <p>İhtiyaçlarınıza Yönelik Çözümler</p>
+        </div>
+        <!-- End of .section-heading -->
+
+        <div class="carousel-container">
+            <div class="carousel-inner d-flex align-items-center">
+
+                @foreach (var item in Model)
+                {
+                    <div class="item">
+                        <a href="@Url.Action("ServiceDetail","Service",new{link=item.Link,lang=ViewBag.CurrentCultureTwoLetter})" class="content text-center equalHeight">
+                            <img src="@Url.Content(String.Format(SystemConstants.ServiceImagePath) + "/" + item.MainImage.FileName)" alt="@item.MainImage.Alt" class="img-fluid">
+                            <h3>@item.Name</h3>
+                            <p>@item.ShortDescription</p>
+                        </a>
+                    </div>
+
+                }
+
+            </div>
+            <!-- End of .carousel-inner -->
+        </div>
+        <!-- End of .carousel-container -->
+    </div>
+    <!-- End of .container -->
+</section>
+<!-- End of .services -->
+ 

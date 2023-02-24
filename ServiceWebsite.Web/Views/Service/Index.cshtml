@@ -1,0 +1,72 @@
+﻿
+@{
+    string className = "filter1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<ServiceWebsite.ViewModels.WebSite.ServiceListViewModel>
+<section class="section featured-works">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>Hizmetlerimiz</h2>
+        </div>
+        <!-- End of .section-heading -->
+
+        <div class="featured-work-content">
+            <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="content box-with-img">
+                        <a href="work-details.html" class="img-container">
+                            <img src="@Url.Content(String.Format(SystemConstants.ServiceImagePath) + "/" + item.MainImage.FileName)" alt="@item.Name" class="img-fluid">
+                        </a>
+                        <!-- End of .img-container -->
+
+                        <div class="text-content  text-left">
+                            <h3>
+                                <a href="work-details.html">
+                                    @item.Name
+                                </a>
+                            </h3>
+                            <a href="work-details.html" class="readmore-btn">
+                                <div>
+                                    @WebSiteViewItems.ReadMore
+                                    <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                            <!-- End of .readmore-btn -->
+                        </div>
+                        <!-- End of .text-content -->
+
+                        <a href="@Url.Action("ServiceDetail","Service",new{link=item.Link,lang=ViewBag.CurrentCultureTwoLetter})" class="overlay">
+                            <div class="text-content  text-left">
+                                <h3>
+                                    @item.ShortDescription
+                                </h3>
+                                <div class="readmore-btn">
+                                    <div>
+                                        @WebSiteViewItems.ReadMore
+                                        <i class="fa fa-long-arrow-right"></i>
+                                    </div>
+                                </div>
+                                <!-- End of .readmore-btn -->
+                            </div>
+                            <!-- End of .text-content -->
+                        </a>
+                        <!-- End of .overlay -->
+                    </div>
+                    <!-- End of .content -->
+                </div>
+                <!-- End of .col-md-6 -->
+            }
+
+
+                 
+            </div>
+            <!-- End of .row -->
+        </div>
+        <!-- End of .featured-work-content -->
+    </div>
+    <!-- End of .container -->
+</section>
+<!-- End of .service-cat-checklist-->

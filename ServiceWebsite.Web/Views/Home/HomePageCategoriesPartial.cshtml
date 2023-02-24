@@ -1,0 +1,24 @@
+﻿@model List<ServiceWebsite.ViewModels.WebSite.CategoryListModel>
+
+<div class="content base-padd">
+    <h2>@WebSiteViewItems.PopularCategories</h2>
+
+    <div class="container-fulid">
+        <div class="content-wrapper">
+            <div class="rq-rental-item-column width-32per">
+                @foreach (var item in Model)
+                {
+                    <div class="rq-rental-item width-32per">
+                        <div class="img-wrapper">
+                            <a href="@Url.Action("Index","Product",new{link=item.Link,lang=ViewBag.CurrentCultureTwoLetter})"><img class="primary-image" src="@Url.Content(String.Format(SystemConstants.SliderImagePath) + "/" + item.Image)" alt="@item.Name" title="@item.Name"></a>
+                            <div class="hover">
+                                <h3 class="font-40-pla-reg-2"><a href="@Url.Action("Index","Product",new{link=item.Link,lang=ViewBag.CurrentCultureTwoLetter})">@item.Name</a></h3>
+                                <p class="font-14-for-reg-2">@WebSiteViewItems.PopularCategories</p>
+                            </div>
+                        </div><!-- /.img-wrapper -->
+                    </div><!-- /.rq-rental-item -->
+                }
+            </div><!-- /.content-wrapper -->
+        </div>
+    </div><!-- /.container-fulid -->
+</div><!-- /.content -->

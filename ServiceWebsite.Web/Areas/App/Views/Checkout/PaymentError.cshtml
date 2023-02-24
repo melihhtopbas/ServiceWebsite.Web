@@ -1,0 +1,22 @@
+﻿@using ServiceWebsite.Utils.Constants
+
+@{
+    ViewBag.Title = "PaymentSuccess";
+    Layout = "~/Areas/App/Views/Shared/_Layout.cshtml";
+    var tempData = ((ServiceWebsite.ViewModels.WebSite.NotificationModel) TempData[StringConstants.Notification]);
+}
+ 
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <h1>@tempData.Title</h1>
+        </div>
+        <div class="col-md-12 ">
+            <h5>@tempData.Message</h5>
+        </div>
+         
+    </div>
+</div>
+
+ 

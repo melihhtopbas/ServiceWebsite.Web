@@ -1,0 +1,49 @@
+﻿@using ServiceWebsite.ViewModels.Admin
+@model IPagedList<ServiceWebsite.ViewModels.Admin.CustomerPaymentListViewModel>
+@{
+    var searchModel = (CustomerPaymentListSearchViewModel)ViewBag.CustomerPaymentSearchModel;
+}
+<div class="clearfix">
+
+
+    <div class="pull-right">
+        @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, new AjaxOptions { UpdateTargetId = "customerPaymentListContainer" }).Options(o => o
+                 .Action("CustomerPaymentList")
+                 .DisplayTemplate("BootstrapPagination")
+                 .MaxNrOfPages(6)
+                 .AlwaysAddFirstPageNumber()
+                 .RouteValues(new RouteValueDictionary(searchModel))
+                 )
+    </div>
+</div>
+<table id="customerPaymentList" class="table table-condensed table-striped table-hover">
+    <thead>
+        <tr>
+
+            <th class="table-cell-name-nowrap">Website</th>
+            <th class="table-cell-name-nowrap">Tarih</th>
+            <th class="table-cell-money">Fiyat</th>
+            <th class="table-cell-name-nowrap">Durum</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayFor(m => m)
+    </tbody>
+    @*<tfoot>
+        <tr>
+            <td colspan="5">
+                Toplam : @ViewBag.TotalPaymentAmount <i class="fas fa-lira-sign"></i>
+
+            </td>
+        </tr>
+    </tfoot>*@
+</table>
+
+@Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, new AjaxOptions { UpdateTargetId = "customerPaymentListContainer" }).Options(o => o
+    .Action("CustomerPaymentList")
+    .DisplayTemplate("BootstrapPagination")
+    .MaxNrOfPages(6)
+    .AlwaysAddFirstPageNumber()
+    .RouteValues(new RouteValueDictionary(searchModel))
+)

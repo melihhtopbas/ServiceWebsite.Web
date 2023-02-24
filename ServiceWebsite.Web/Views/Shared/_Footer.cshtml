@@ -1,0 +1,97 @@
+﻿<footer class="page-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="@Url.Action("Index", "Home", new {lang = ViewBag.CurrentCultureTwoLetter})" class="navbar-brand ">
+                        <img src="@SettingViewModel.Logo" style="height: 50%; width: 50%" alt="footer logo">
+                         
+                    </a>
+                    <!-- End of .navbar-brand -->
+                </div>
+                <!-- End of .col-md-6 -->
+
+                <div class="col-md-8 ml-md-auto">
+                    <ul class="navbar-nav navbar-expand-md">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Home", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.HomePage</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "About", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index", "Service", new {lang = ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.ServiceList</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Blog",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Index","Contact",new {lang=ViewBag.CurrentCultureTwoLetter})">@WebSiteViewItems.Contact</a>
+                        </li>
+                    </ul>
+                    <!-- End of .navbar-nav -->
+                </div>
+                <!-- End of .col-md-6 -->
+            </div>
+            <!-- End of .row -->
+        </div>
+        <!-- End of .footer-top -->
+
+        
+        <!-- End of .footer-mid -->
+
+        <div class="footer-bottom">
+            <div class="row align-text-center justify-content-between">
+                <div class="col-md-auto  text-left">
+                    <p>
+                        Copyright - @DateTime.Today.Year, KVKK
+                        <span>All rights reserved.</span>
+                    </p>
+                    <div class="footer-bottom-links">
+                        @{Html.RenderAction("HomePage", "Home");}
+
+                    </div>
+                    <!-- End of .footer-bottom-links -->
+                </div>
+                <!-- End of .col-md-6 -->
+
+                <div class="col-md-auto  text-left">
+                    <p>@WebSiteViewItems.SocialMedia</p>
+                    <div class="footer-bottom-icons d-flex justify-content-md-center">
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Facebook))
+                        {
+                            <a class="c-facebook" href="@SettingViewModel.Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Twitter))
+                        {
+                            <a class="c-twitter" href="@SettingViewModel.Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Gplus))
+                        {
+                            <a class="c-google-plus" href="@SettingViewModel.Gplus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(SettingViewModel.Youtube))
+                        {
+                            <a class="c-youtube" href="@SettingViewModel.Youtube">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        }
+
+                        
+                    </div>
+                    <!-- End of .footer-bottom-links -->
+                </div>
+                <!-- End of .col-md-6 -->
+            </div>
+            <!-- End of .row -->
+        </div>
+        <!-- End of .footer-bottom -->
+    </div>
+    <!-- End of .container -->
+</footer>

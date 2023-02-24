@@ -1,0 +1,45 @@
+﻿@using ServiceWebsite.ViewModels.Admin
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{Html.RenderAction("SliderPartial", "Home"); }
+
+
+<!-- Site-performance starts
+============================================ -->
+@*<div class="site-performance grey-bg d-flex align-items-center text-center">
+    <div class="container">
+        <h2>KVKK Arama</h2>
+        <form action="@Url.Action("Analysis","Home")" method="post" class="mx-auto">
+            <input type="text" class="form-control" name="websiteUrl" placeholder="Web Sitenizin KVKK' Sını Kontrol Ediniz.">
+        
+            <button type="submit">
+                <img src="~/Content/images/icons/btn-right-arrow.png" alt="button arrow">
+             </button>
+        </form>
+        <!-- End of form -->
+    </div>
+    <!-- End of .container -->
+</div>*@
+<!-- End of .site-performance -->
+
+
+
+@{Html.RenderAction("HomePageProperties", "Home"); }
+
+
+@{Html.RenderAction("NewServicesPartial", "Home");}
+
+
+@{Html.RenderAction("HomePageAbout", "Home"); }
+
+
+@{Html.RenderAction("HomePageBlogs", "Home"); }
+
+@{Html.RenderAction("HomePageReferences", "Home"); }
+
+@*@{Html.RenderAction("HomePageCategories", "Home");}*@
+

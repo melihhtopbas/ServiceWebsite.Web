@@ -1,0 +1,9 @@
+﻿@model List<ServiceWebsite.ViewModels.Common.LanguageListModel>
+
+
+@foreach (var item in Model)
+{
+    <li>
+        <a href="@Url.Action("LanguageChanger","Common",new {lang=item.ShortName})">@item.Name</a>
+    </li>
+}

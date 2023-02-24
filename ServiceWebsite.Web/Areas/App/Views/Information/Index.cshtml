@@ -1,0 +1,229 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/App/Views/Shared/_Layout.cshtml";
+}
+@using ServiceWebsite.Core.TypeCodes
+@using ServiceWebsite.ViewModels.Admin
+@model ServiceWebsite.ViewModels.WebSite.InformationAddViewModel
+<div class="container-fluid full-height">
+    <div class="row row-height">
+        <div class="col-lg-6 content-left">
+            <div class="content-left-wrapper">
+                <a href="@Url.Action("Index","Start")" id="logo"><img src="/Content/img/logo.svg" alt="" width="49" height="35"></a>
+                <div id="social">
+                    <ul>
+                        <li><a href="#0"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#0"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#0"><i class="icon-google"></i></a></li>
+                        <li><a href="#0"><i class="icon-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <!-- /social -->
+                <div class="container margin_60">
+
+                    <div class="row">
+                        <div class="owl-carousel owl-theme team-carousel">
+                            <div class="item">
+                                <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                <h2>
+                                    YASALLIK ANALİZİ NE İŞE YARAR?
+                                </h2>
+                                <p>
+                                    Maddi Cezaların Önüne Geçer
+                                </p>
+
+                            </div>
+                            <div class="item">
+                                <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                <h2>
+                                    YASALLIK ANALİZİ NE İŞE YARAR?
+                                </h2>
+                                <p>
+                                    Hukuken Korur.
+
+                                </p>
+
+                            </div>
+                            <div class="item">
+                                <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                <h2>
+                                    YASALLIK ANALİZİ NE İŞE YARAR?
+                                </h2>
+                                <p>
+                                    Olası Davaların Önüne Geçer.
+
+                                </p>
+
+                            </div>
+                            <div class="item">
+                                <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                <h2>
+                                    YASALLIK ANALİZİ NE İŞE YARAR?
+                                </h2>
+                                <p>
+                                    Kısa Zamanda  Çözüm Sağlar.
+
+                                </p>
+
+                            </div>
+                            <div class="item">
+                                <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                <h2>
+                                    YASALLIK ANALİZİ NE İŞE YARAR?
+                                </h2>
+                                <p>
+                                    Rakiplerin Olası Hamlelerini Önler.
+
+
+                                </p>
+
+                            </div>
+                            <div class="item">
+                                <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                <h2>
+                                    YASALLIK ANALİZİ NE İŞE YARAR?
+                                </h2>
+                                <p>
+                                    Web Sayfasını Hukuka Uygun Hale Getirir.
+
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copy">© @DateTime.Today.Year Prasoft</div>
+            </div>
+            <!-- /content-left-wrapper -->
+        </div>
+        <!-- /content-left -->
+
+        <div class="col-lg-6 content-right" id="start">
+            <div id="wizard_container">
+                <div id="top-wizard">
+                    <div id="progressbar"></div>
+                </div>
+                <!-- /top-wizard -->
+                @using (Html.BeginForm("Add", "Information", FormMethod.Post, new { id = "hotelAddForm", role = "form" }))
+                {
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(a => a.WebsiteId)
+                    <input id="website" type="text" value="">
+                    <!-- Leave for security protection, read docs for details -->
+                    <div id="middle-wizard">
+                        <div class="step">
+                            <h3 class="main_question"><strong>1/3</strong>Bilgileriniz</h3>
+                            @foreach (var item in (List<CustomerAttributeListViewModel>)ViewBag.CustomerAttributes)
+                            {
+                                if (item.AttributeControlType == AttributeControlType.TextBox)
+                                {
+                                    <div class="form-group">
+                                        <input name="attribute_@item.Id" class="form-control @(item.IsRequired?"required":"")" placeholder="@item.Name" />
+                                    </div>
+                                }
+
+                                if (item.AttributeControlType == AttributeControlType.MultilineTextbox)
+                                {
+                                    <div class="form-group">
+                                        <textarea name="attribute_@item.Id" class="form-control @(item.IsRequired?"required":"")" placeholder="@item.Name"></textarea>
+                                    </div>
+                                }
+
+                            }
+
+
+
+
+
+
+                        </div>
+                        <!-- /step-->
+                        <div class="step">
+                            <h3 class="main_question"><strong>2/3</strong>Kullanıcılarınızdan talep edeceğiniz verileri seçiniz. </h3>
+                            @foreach (var item in (List<CustomerAttributeListViewModel>)ViewBag.CustomerAttributes)
+                            {
+                                if (item.AttributeControlType == AttributeControlType.Checkboxes)
+                                {
+                                    <div class="form-group">
+
+                                        <label class="container_radio version_2">
+                                            <label>@item.Name</label>
+                                            <input name="attribute_@item.Id" type="checkbox" />
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                }
+                            }
+
+                        </div>
+                        <!-- /step-->
+                        @*  <div class="step">
+                                <h3 class="main_question"><strong>3/5</strong>@Html.DisplayNameFor(a => a.ThirdParties)</h3>
+                                <div class="form-group">
+                                    <label class="container_check version_2">
+                                        Evet
+                                        @Html.RadioButtonFor(a => a.ThirdParties, new {@class = "required"})
+
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="container_check version_2">
+                                        Hayır
+                                        @Html.RadioButtonFor(a => a.ThirdParties, new {@class = "required"})
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- /step-->
+                            <div class="step">
+                                <h3 class="main_question"><strong>4/5</strong>@Html.DisplayNameFor(a => a.Advertising)</h3>
+                                <div class="form-group">
+                                    <label class="container_radio version_2">
+
+                                        Evet
+                                        @Html.RadioButtonFor(a => a.Advertising, new {@class = "required"})
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label class="container_radio version_2">
+                                        Hayır
+                                        @Html.RadioButtonFor(a => a.Advertising, new {@class = "required"})
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+
+                            </div>*@
+                        <!-- /step-->
+                        <div class="submit step">
+                            <h3 class="main_question"><strong>3/3</strong>Ödeme</h3>
+                            <div class="summary">
+                                <i class="fa fa-4x fa-balance-scale text-red"></i>
+                                <span class="text-red">
+                                    TEBRİKLER AYDINLATMA METNİNİ HAZIRLADINIZ!
+                                    BU İŞLEM SİZİ 5.000 – 15.000 TL CEZADAN KURTARDI.
+
+                                </span>
+                            </div>
+                        </div>
+                        <!-- /step-->
+                    </div>
+                    <!-- /middle-wizard -->
+                    <div id="bottom-wizard">
+                        <button type="button" name="backward" class="backward">Geri</button>
+                        <button type="button" name="forward" class="forward">İleri</button>
+                        <button type="submit" name="process" class="submit">Şimdi Satın Al</button>
+                    </div>
+                    <!-- /bottom-wizard -->
+                }
+            </div>
+            <!-- /Wizard container -->
+        </div>
+        <!-- /content-right-->
+    </div>
+    <!-- /row-->
+</div>

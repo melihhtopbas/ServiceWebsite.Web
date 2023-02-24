@@ -1,0 +1,34 @@
+﻿
+@model ServiceWebsite.ViewModels.Admin.KeywordListViewModel
+<tr id="@("keyword_"+Model.Id)" class="master-row">
+    
+    <td>@Model.Name</td>
+     
+    <td style="width:50px">
+        <a data-modal-form="true"
+           data-modal-size="modal-lg"
+           data-modal-update="#keyword_@Model.Id"
+           data-modal-highlight="#keyword_@Model.Id"
+           data-modal-title="Anahtar Kelime Düzenle"
+           data-hook-beforeunload="true"
+           class="btn btn-block btn-success btn-sm"
+           href="@Url.Action("Edit", "KeywordSetting", routeValues: new {Area = "Admin",keywordId=Model.Id})">
+            <i class="fa fa-edit fa-fw text-success"></i> Anahtar Kelime Düzenle
+        </a>
+    
+    </td>
+    <td style="width:50px">
+        <a href="javascript:void(0);"
+           data-toggle="confirmation"
+           title="Emin Misiniz"
+           data-btn-ok-label="Evet"
+           data-btn-cancel-label="Hayır"
+           data-placement="top"
+           data-keyword-id="@Model.Id"
+           data-on-confirm="deleteKeyword"
+           class="btn btn-block btn-danger btn-sm">
+            <i class="fa fa-trash fa-fw text-danger"></i> Anahtar Kelime Sil
+        </a>
+
+    </td>
+</tr>

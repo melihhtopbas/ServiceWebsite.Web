@@ -1,0 +1,62 @@
+﻿@model IPagedList<ServiceWebsite.ViewModels.WebSite.BlogListViewModel>
+<!-- Blog starts
+   ============================================ -->
+<section class="section blog grey-bg">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>
+                <span>@WebSiteViewItems.OurBlog</span>
+            </h2>
+            <p>KVKK Hakkında Daha Fazla Bilgi Almak İçin Blogumuzu Takip Etin.</p>
+        </div>
+        <!-- End of .section-heading -->
+
+        <div class="blog-content-wrapper">
+            <div class="row">
+
+
+
+
+
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="blog-content">
+                            <a href="@Url.Action("BlogDetail", "Blog", new { link = item.Link, lang = ViewBag.CurrentCultureTwoLetter })" class="img-container">
+                                <img src="@Url.Content(String.Format(SystemConstants.BlogImagePath) + "/" + item.MainImage.FileName)" alt="@item.MainImage.Alt" class="img-fluid">
+                            </a>
+                            <!-- End of .img-container -->
+                            <div class="text-content  text-left">
+                                <span>@item.Date</span>
+                                <h3>
+                                    <a href="@Url.Action("BlogDetail", "Blog", new { link = item.Link, lang = ViewBag.CurrentCultureTwoLetter })">@item.Name</a>
+                                </h3>
+                                <p>
+                                    @item.ShortDesciription
+                                </p>
+                                <a href="@Url.Action("BlogDetail", "Blog", new { link = item.Link, lang = ViewBag.CurrentCultureTwoLetter })" class="readmore-btn">
+                                    <div>
+                                       @WebSiteViewItems.ReadMore
+                                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                    </div>
+                                </a>
+                                <!-- End of .readmore-btn -->
+                            </div>
+                            <!-- End of .text-content -->
+                        </div>
+                        <!-- End of .content -->
+                    </div>
+                    <!-- End of .col-md-4 -->
+                }
+
+
+
+
+                </div>
+            <!-- End of .row -->
+        </div>
+        <!-- End of .blog-content-box -->
+    </div>
+    <!-- End of .container -->
+</section>
+<!-- End of .blog -->

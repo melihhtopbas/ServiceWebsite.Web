@@ -1,0 +1,76 @@
+﻿@model IPagedList<ServiceWebsite.ViewModels.Admin.CustomerAttributeListViewModel>
+@{
+    var languages = (List<ServiceWebsite.ViewModels.Common.LanguageListModel>)ViewBag.Languages;
+}
+<div class="products-list-tools clearfix">
+
+    @foreach (var language in languages)
+    {
+        <a class="btn btn-default btn-sm"
+           data-modal-form="true"
+           data-modal-size="modal-lg"
+           data-modal-prepend="tbody#customerAttributeList"
+           data-modal-title="@language.Name Değer Ekle"
+           data-hook-beforeunload="true"
+           href="@Url.Action("Add", "CustomerAttributeSetting", routeValues: new {Area ="Admin",languageId=language.Id})">
+            <i class="fa fa-plus"></i>@language.Name Değer Ekle
+        </a>
+    }
+
+
+
+
+    <div class="pull-right hidden-xs hidden-sm">
+        @if (Model.Any())
+        {
+            <div style="margin: 20px 0; float: left !important;">
+                @((Model.PageIndex * Model.PageSize) + 1)-@((Model.PageIndex * Model.PageSize) + Model.Count())/@Model.TotalItemCount
+            </div>
+        }
+
+        &nbsp;
+        @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, new AjaxOptions {UpdateTargetId = "customerAttributeListContainer"}).Options(o => o
+            .Action("CustomerAttributeList")
+            .DisplayTemplate("BootstrapPagination")
+            .MaxNrOfPages(6)
+            .AlwaysAddFirstPageNumber()
+            .RouteValues(new {languageId=@ViewBag.LanguageId })
+
+            )
+    </div>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th>Adı</th>
+            <th>Değer</th>
+            <th style="width:50px">Düzenle</th>
+            <th style="width:50px">Sil</th>
+        </tr>
+    </thead>
+    <tbody id="customerAttributeList">
+    @Html.DisplayFor(m => m)
+
+
+    </tbody>
+    
+</table>
+<div class="pull-left">
+
+    @Html.Pager(Model.PageSize, Model.PageNumber, Model.TotalItemCount, new AjaxOptions {UpdateTargetId = "customerAttributeListContainer"}).Options(o => o
+        .Action("CustomerAttributeList")
+        .DisplayTemplate("BootstrapPagination")
+        .MaxNrOfPages(6)
+        .AlwaysAddFirstPageNumber()
+        .RouteValues(new {languageId=@ViewBag.LanguageId })
+
+        )
+</div>
+@if (Model.Any())
+{
+    <div style="margin: 20px 0; float: left !important;">
+        @((Model.PageIndex * Model.PageSize) + 1)-@((Model.PageIndex * Model.PageSize) + Model.Count())/@Model.TotalItemCount
+    </div>
+}
+

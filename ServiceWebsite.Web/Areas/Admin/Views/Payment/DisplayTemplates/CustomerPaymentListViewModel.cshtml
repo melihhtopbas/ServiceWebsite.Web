@@ -1,0 +1,15 @@
+﻿@model ServiceWebsite.ViewModels.Admin.CustomerPaymentListViewModel
+<tr id="@("customerPayment_"+Model.Id)">
+
+    <td class="table-cell-name-nowrap">@Model.WebsiteName</td>
+    <td class="table-cell-name-nowrap">@Model.PaymentDate.ToString("dd.MM.yyyy HH:mm:ss")</td>
+
+    <td class="table-cell-money"><strong>@Model.PaymentAmount.ToString("N2")&nbsp;<i class="fas fa-lira-sign"></i></strong></td>
+
+   
+    <td class="table-cell-name-nowrap">
+        @Html.DisplayFor(x => x.PostPaymentResult)
+    </td>
+ 
+    <td></td>
+</tr>

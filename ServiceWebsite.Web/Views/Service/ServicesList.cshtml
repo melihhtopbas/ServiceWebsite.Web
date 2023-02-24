@@ -1,0 +1,21 @@
+﻿@model List<ServiceWebsite.ViewModels.WebSite.ServiceListViewModel>
+
+<!--START CALL TO ACTION AREA-->
+<div class="service_plan_area">
+    <div class="container">
+        <div class="row">
+             @foreach (var item in Model)
+             {
+                 <div class="col-md-4 col-sm-6 wow fadeInRight">
+                     <div class="single_plan plan_three">
+                         <img src="@Url.Content(String.Format(SystemConstants.ServiceImagePath) + "/" + item.Icon)" alt="@item.MainImage.Alt" title="@item.MainImage.Alt">
+                         <h3>@item.Name</h3>
+                         <p>@item.ShortDescription</p>
+                     </div>
+                 </div>
+             }
+            
+        </div>
+    </div>
+</div>
+<!--/END CALL TO ACTION AREA-->

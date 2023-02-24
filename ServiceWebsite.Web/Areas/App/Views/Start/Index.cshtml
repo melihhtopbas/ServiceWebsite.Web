@@ -1,0 +1,247 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/App/Views/Shared/_Layout.cshtml";
+}
+<style>
+    
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto
+    }
+    .loader {
+        position: relative;
+        width:100%;
+        height: 60px;
+        filter: url('#goo');
+    }
+    .loader__item {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(45deg,#61c2ff 0%,#1aa7ff 100%);
+        border-radius: 50%;
+        animation: loading 4s infinite;
+        transform: scale(.1);
+        transform-origin: center left;
+    }
+    .loader__item:nth-child(2) {
+        animation-delay: .4s;
+    }
+    .loader__item:nth-child(3) {
+        animation-delay: .8s;
+    }
+    .loader__item:nth-child(4) {
+        animation-delay: 1.2s;
+    }
+    .loader__item:nth-child(5) {
+        animation-delay: 1.6s;
+    }
+    @@keyframes loading {
+    0% {
+        transform: scale(.1);
+    }
+    45% {
+        left: 120px;
+        transform: scale(1);
+    }
+    90% {
+        left: 294px;
+        transform: scale(.1);
+    }
+    }
+    .title {
+        margin-top:60px;
+        font:25px 'Trebuchet MS';
+        color: #444;
+        text-align: center;
+        color: white
+    }
+    svg {
+        display: none;
+    }
+
+</style>
+<div class="container-fluid full-height">
+    <div class="row row-height">
+        <div class="col-lg-12 content-left">
+            <div class="content-left-wrapper">
+                <a href="@Url.Action("Index","Start")"  id="logo"><img src="~/Content/img/logo.svg" alt="" width="150"></a>
+                <div id="mainPart">
+                    <div class="item" id="analysisPart">
+                        <figure><img src="~/Content/img/balance.png" alt="" class="img-fluid"></figure>
+                        <h1 style="color: white">YASALLIĞI KEŞFET</h1>
+                        <p>
+                            Web sayfalarını yasal anlamda analiz  eder, bulunan eksiklikleri giderir, hukuka uygun hale getirir.
+                        </p>
+
+                        <div class="input-group mb-3 rounded">
+                            <input type="text" class="form-control" placeholder="abc.com.tr" id="websiteUrl" aria-label="abc.com.tr" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary text-white" type="button" id="analysisButton">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container margin_60" id="informationPart" style="display:none">
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="owl-carousel owl-theme team-carousel">
+                                    <div class="item">
+                                        <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                        <h2>
+                                            YASALLIK ANALİZİ NE İŞE YARAR?
+                                        </h2>
+                                        <p>
+                                            Maddi Cezaların Önüne Geçer
+                                        </p>
+
+                                    </div>
+                                    <div class="item">
+                                        <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                        <h2>
+                                            YASALLIK ANALİZİ NE İŞE YARAR?
+                                        </h2>
+                                        <p>
+                                            Hukuken Korur.
+
+                                        </p>
+
+                                    </div>
+                                    <div class="item">
+                                        <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                        <h2>
+                                            YASALLIK ANALİZİ NE İŞE YARAR?
+                                        </h2>
+                                        <p>
+                                            Olası Davaların Önüne Geçer.
+
+                                        </p>
+
+                                    </div>
+                                    <div class="item">
+                                        <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                        <h2>
+                                            YASALLIK ANALİZİ NE İŞE YARAR?
+                                        </h2>
+                                        <p>
+                                            Kısa Zamanda  Çözüm Sağlar.
+
+                                        </p>
+
+                                    </div>
+                                    <div class="item">
+                                        <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                        <h2>
+                                            YASALLIK ANALİZİ NE İŞE YARAR?
+                                        </h2>
+                                        <p>
+                                            Rakiplerin Olası Hamlelerini Önler.
+
+
+                                        </p>
+
+                                    </div>
+                                    <div class="item">
+                                        <figure><img src="/Content/img/info_graphic_1.svg" alt="" class="img-fluid"></figure>
+                                        <h2>
+                                            YASALLIK ANALİZİ NE İŞE YARAR?
+                                        </h2>
+                                        <p>
+                                            Web Sayfasını Hukuka Uygun Hale Getirir.
+
+
+                                        </p>
+
+                                    </div>
+
+                                    <!-- /team-item -->
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="content">
+                                    <div>
+
+                                        <div class="loader">
+                                            <div class="loader__item"></div>
+                                            <div class="loader__item"></div>
+                                            <div class="loader__item"></div>
+                                            <div class="loader__item"></div>
+                                            <div class="loader__item"></div>
+                                        </div>
+                                        <h1 class="title">
+                                           Analiz Yapılıyor...
+                                        </h1>
+                                    </div>
+                                </div>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                    <defs>
+                                        <filter id="goo">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                                            <feBlend in="SourceGraphic" in2="goo" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /social -->
+
+                <div class="copy">© @DateTime.Today.Year Prasoft</div>
+            </div>
+            <!-- /content-left-wrapper -->
+        </div>
+        <!-- /content-left -->
+        <!-- /content-right-->
+    </div>
+    <!-- /row-->
+</div>
+<script>
+     
+    $( "#analysisButton" ).click(function() {
+        $("#analysisPart").css("display", "none");
+        $("#informationPart").css("display", "block");
+        var websiteUrl = $("#websiteUrl").val();
+        $.fn.websiteAnalysis(websiteUrl);
+
+    });
+
+    $.fn.websiteAnalysis = function (websiteUrl) {
+        $.ajax({
+            url: '/app/start/analysis',
+            dataType: 'json',
+            type: "POST",
+            cache: false,
+            data: { websiteUrl: websiteUrl }
+        }).done(function (result) {
+            //container.find(overlay).remove();
+            if (result.success) {
+                $("#mainPart").html(result.item);
+
+            } else {
+                $.each(result.errorMessages,
+                    function (i, item) {
+                        
+                    });
+            }
+        }).fail(function () {
+
+        });
+        return false;
+    }
+
+
+</script>

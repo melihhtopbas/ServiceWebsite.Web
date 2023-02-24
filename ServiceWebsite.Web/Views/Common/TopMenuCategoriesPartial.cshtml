@@ -1,0 +1,7 @@
+﻿
+@model List<ServiceWebsite.ViewModels.WebSite.CategoryListModel>
+
+<li>
+    <a href="@Url.Action("Index", "Service", new {link = Model.FirstOrDefault()?.Link, lang = ViewBag.CurrentCultureTwoLetter})">
+    </a>
+ </li>

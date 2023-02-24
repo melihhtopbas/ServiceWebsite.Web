@@ -1,0 +1,36 @@
+﻿@{
+    string className = "filter1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<ServiceWebsite.ViewModels.WebSite.PropertyListViewModel>
+<!--/END TOP HEADER AREA-->
+<div class="title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about-title-area">
+                    <h1>@WebSiteViewItems.CaseStudies</h1>
+                    <p><a href="@Url.Action("Index","Home")">@WebSiteViewItems.HomePage</a> - <span>@WebSiteViewItems.CaseStudies</span> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="case_area case_page">
+    <div class="container">
+        <div class="row">
+
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-4 col-xs-12 wow fadeInUp">
+                    <div class="single_case text-center">
+                        <img src="@Url.Content(String.Format(SystemConstants.PropertyImagePath) + "/" + item.MainImage.FileName)" alt="@item.Name">
+                        <h4 class="single_case_text">@item.Name<br> <span>@item.ShortDescription</span></h4>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,67 @@
+﻿@using ServiceWebsite.Core.TypeCodes
+@model ServiceWebsite.ViewModels.Admin.CustomerPaymentListSearchViewModel
+@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box box-solid">
+            <div class="box-header">
+                <i class="fa fa-book"></i>
+                <h3 class="box-title">@ViewBag.Title</h3>
+            </div>
+            <div class="box-body">
+                @using (Html.BeginForm("CustomerPaymentList", "Payment", new { Area = "Admin" }, FormMethod.Post, new { role = "form", id = "customerPaymentSearchForm", data_ajax_form = "true", data_target_container = "#customerPaymentListContainer" }))
+                {
+
+                    <div class="row">
+
+
+                        <div class="form-group form-group-sm col-xs-6 col-sm-4 col-md-4 col-lg-4 @Html.ModelStateFor(m => m.PostPaymentResult)">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-addon as-label">@Html.DisplayNameFor(m => m.PostPaymentResult) </span>
+
+                                @Html.EnumDropDownListFor(
+                                    x => x.PostPaymentResult,
+                                    "Seçiniz",
+                                    new { @class = "form-control" })
+                            </div>
+                            @Html.ValidationMessageFor(m => m.PostPaymentResult, "", new { @class = "text-danger" })
+                        </div>
+                        @*<div class="form-group form-group-sm col-xs-12 col-sm-6 col-md-3 col-lg-3 @Html.ModelStateFor(m => m.PaymentSearchStartDate)">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-addon as-label">@Html.DisplayNameFor(m => m.PaymentSearchStartDate)</span>
+                                    @(Html.Kendo().DateTimePickerFor(m => m.PaymentSearchStartDate).Format("dd.MM.yyyy HH:mm").TimeFormat("HH:mm").HtmlAttributes(new { @class = "form-control" }))
+                                 </div>
+                                @Html.ValidationMessageFor(m => m.PaymentSearchStartDate, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group form-group-sm col-xs-12 col-sm-6 col-md-3 col-lg-3 @Html.ModelStateFor(m => m.PaymentSearchEndDate)">
+                                <div class="input-group input-group-sm">
+                                    <span class="input-group-addon as-label">@Html.DisplayNameFor(m => m.PaymentSearchEndDate)</span>
+                                    @(Html.Kendo().DateTimePickerFor(m => m.PaymentSearchEndDate).Format("dd.MM.yyyy HH:mm").TimeFormat("HH:mm").HtmlAttributes(new { @class = "form-control" }))
+                                 </div>
+                                @Html.ValidationMessageFor(m => m.PaymentSearchEndDate, "", new { @class = "text-danger" })
+                            </div>*@
+
+                        <div class="form-group form-group-sm col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                            <div class="input-group">
+                                <button type='submit' class="btn btn-sm btn-default btn-block"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                }
+                <div class="clearfix"></div>
+
+                <div id="customerPaymentListContainer" class="table-responsive">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

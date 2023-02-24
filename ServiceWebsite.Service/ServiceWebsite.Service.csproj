@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B6F996F-4D44-42CC-A551-5EE69E9D5115}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiceWebsite.Service</RootNamespace>
+    <AssemblyName>ServiceWebsite.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.17.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.17\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.16.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.16\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\BlogService.cs" />
+    <Compile Include="Admin\CategoryService.cs" />
+    <Compile Include="Admin\ContactService.cs" />
+    <Compile Include="Admin\CustomerCommentService.cs" />
+    <Compile Include="Admin\FaqService.cs" />
+    <Compile Include="Admin\GalleryService.cs" />
+    <Compile Include="Admin\CustomerAttributeService.cs" />
+    <Compile Include="Admin\LanguageService.cs" />
+    <Compile Include="Admin\KeywordService.cs" />
+    <Compile Include="Admin\PageService.cs" />
+    <Compile Include="Admin\PaymentService.cs" />
+    <Compile Include="Admin\PropertyService.cs" />
+    <Compile Include="Admin\ReferenceService.cs" />
+    <Compile Include="Admin\ServiceService.cs" />
+    <Compile Include="Admin\SettingService.cs" />
+    <Compile Include="Admin\SliderService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebSite\BlogService.cs" />
+    <Compile Include="WebSite\CategoryService.cs" />
+    <Compile Include="WebSite\CheckService.cs" />
+    <Compile Include="WebSite\ContactService.cs" />
+    <Compile Include="WebSite\CustomerCommentService.cs" />
+    <Compile Include="WebSite\FaqService.cs" />
+    <Compile Include="WebSite\KeywordService.cs" />
+    <Compile Include="WebSite\LanguageService.cs" />
+    <Compile Include="WebSite\PageService.cs" />
+    <Compile Include="WebSite\PaymentService.cs" />
+    <Compile Include="WebSite\PropertyService.cs" />
+    <Compile Include="WebSite\ReferenceService.cs" />
+    <Compile Include="WebSite\ServiceService.cs" />
+    <Compile Include="WebSite\SettingService.cs" />
+    <Compile Include="WebSite\SliderService.cs" />
+    <Compile Include="WebSite\WebsiteService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceWebsite.Core\ServiceWebsite.Core.csproj">
+      <Project>{04bc026f-3f67-4fc9-ad6a-572192bc1705}</Project>
+      <Name>ServiceWebsite.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceWebsite.Data\ServiceWebsite.Data.csproj">
+      <Project>{c7d93921-ed39-46be-938b-9f9f378eff00}</Project>
+      <Name>ServiceWebsite.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceWebsite.Infrastructure\ServiceWebsite.Infrastructure.csproj">
+      <Project>{bd0cea0a-a4f9-4d34-aa26-20770680f5d0}</Project>
+      <Name>ServiceWebsite.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceWebsite.Localization\ServiceWebsite.Localization.csproj">
+      <Project>{008f2d52-9d11-42b5-af2a-b5b638525c97}</Project>
+      <Name>ServiceWebsite.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceWebsite.Utils\ServiceWebsite.Utils.csproj">
+      <Project>{7c9de951-6d34-4f30-91a6-109bf5e2113c}</Project>
+      <Name>ServiceWebsite.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceWebsite.ViewModels\ServiceWebsite.ViewModels.csproj">
+      <Project>{eb14e322-c498-4711-95b3-57584b5b1040}</Project>
+      <Name>ServiceWebsite.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

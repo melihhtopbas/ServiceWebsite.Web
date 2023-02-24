@@ -1,0 +1,119 @@
+﻿@model ServiceWebsite.ViewModels.WebSite.RequestQuoteViewModel
+@{ Layout = null;}
+
+<style>
+    .form{   
+        display: block;
+        width: 98%;
+        height: 45px;
+        padding: 12px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.13);
+
+    }
+    .formmesaj {
+        display: block;
+        width: 100%;
+        height: 95px;
+        padding: 12px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.13);
+
+    }
+
+    .formbutton {
+        background-color: white;
+        border-style: solid;
+        border-color: #2F0606;
+        border-width: 2px;
+        color: black;
+        padding: 12px 24px;
+        font-size: 24px;
+        width: 100%;
+    }
+</style>
+ 
+<div class="row">
+        <form>
+            <div class="col-sm-6">
+                <div class="form-custom">
+                    <label class="control-label">@Html.DisplayNameFor(a => a.FullName)</label>
+                    <div class="input">
+                        @Html.TextBoxFor(a => a.FullName, new { @class = "form", required = "required" })
+                    </div>
+                </div>
+            </div><!-- /.col-sm-6 -->
+            <div class="col-sm-6">
+                <div class="form-custom">
+                    <label class=" control-label">@Html.DisplayNameFor(a => a.Email)</label>
+                    <div class="input">
+                        @Html.TextBoxFor(a => a.Email, new { @class = "form", required = "required" })
+                    </div>
+                </div>
+            </div><!-- /.col-sm-6 -->
+            <div class="col-sm-6">
+                <div class="form-custom">
+                    <label class=" control-label">@Html.DisplayNameFor(a => a.Phone)</label>
+                    <div class="input">
+                        @Html.TextBoxFor(a => a.Phone, new { @class = "form", required = "required" })
+                    </div>
+                </div>
+            </div><!-- /.col-sm-6 -->
+            <div class="col-sm-6">
+                <div class="form-custom">
+                    <label class=" control-label">@Html.DisplayNameFor(a => a.Company)</label>
+                    <div class="input">
+                        @Html.TextBoxFor(a => a.Company, new { @class = "form", required = "required" })
+                    </div>
+                </div>
+            </div><!-- /.col-sm-6 -->
+            <div class="col-sm-6">
+                <div class="form-custom">
+                    <label class=" control-label">@Html.DisplayNameFor(a => a.VatRate)</label>
+                    <div class="input">
+                        @Html.TextBoxFor(a => a.VatRate, new { @class = "form", required = "required" })
+                    </div>
+                </div>
+            </div><!-- /.col-sm-6 -->
+            <div class="col-sm-6">
+                <div class="form-custom">
+                    <label class=" control-label">@Html.DisplayNameFor(a => a.Product)</label>
+                    <div class="input">
+                        @Html.TextBoxFor(a => a.Product, new { @class = "form", required = "required" })
+                    </div>
+                </div>
+            </div><!-- /.col-sm-6 -->
+            <!-- /.row -->
+
+            <div class="form-custom">
+                <label class="control-label">@Html.DisplayNameFor(a => a.Message)</label>
+                <div class="textarea">
+                    @Html.TextAreaFor(a => a.Message, new { @class = "formmesaj", required = "required" })
+                </div>
+            </div>
+            <div class="form-custom" style="margin: 10px">
+                <input type="checkbox" class="form-check-input" style="color: black" id="exampleCheck1">
+               
+                İlgili hizmet sözleşmelerini, <a style="color: #00a0d2" target="_blank" href="/sozlesmeler/KullaniciSozlesmesi">Kullanıcı sözleşmesi</a> ve 
+                <a target="_blank" style="color: #00a0d2"  href="/sozlesmeler/GizlilikSozlesmesi">Gizlilik</a> 
+                <a target="_blank" style="color: #00a0d2"  href="/sozlesmeler/KisiselVerilerinKorunmasiveislenmesiPolitikasi">&amp; KVK politikasını</a> okudum ve kabul ediyorum.
+            </div>
+            <div class="form-custom pull">
+                <button type="submit" class="formbutton">@WebSiteViewItems.Submit</button>
+
+            </div>
+        </form>
+    </div>
+ 
+
+

@@ -1,0 +1,48 @@
+﻿@model ServiceWebsite.ViewModels.WebSite.KeywordListViewModel
+<table class="order-table">
+    <tbody>
+    <tr>
+        @Html.HiddenFor(a=>a.Id)
+        @Html.HiddenFor(a=>a.ImageUrl)
+        @Html.HiddenFor(a=>a.Result)
+        @Html.HiddenFor(a=>a.Price)
+        @Html.HiddenFor(a=>a.Name)
+        @*<td>
+            <img src="@Model.ImageUrl" class="image-width"/>
+        </td>*@
+        <td>
+            <br>
+            <label class="container_check">
+                @Model.Name
+                @if (Model.Result)
+                {
+                    <span style="color: green">(Mevcut)</span>
+                }
+                else
+                {
+                    <span style="color: red">(Eksik)</span>
+                }
+
+                @Html.CheckBoxFor(m => m.Checked,
+                    new
+                    {
+                        data_keywordId=Model.Id,
+                        @class="required keywordCheckboxes",
+                        data_price=Model.Price
+                    
+                    })
+                <input type="checkbox" data-keywordId="@Model.Id" name="@Html.NameFor(a => a.Checked)" data-price="@Model.Price" class="required keywordCheckboxes">
+                <span class="checkmark"></span>
+            </label>
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <div class="price">₺ @Model.Price</div>
+        </td>
+    </tr>
+    </tbody>
+
+</table>
+<div class="line"></div>

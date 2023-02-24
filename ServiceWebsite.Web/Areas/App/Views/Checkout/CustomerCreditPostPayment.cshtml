@@ -1,0 +1,35 @@
+﻿@model ServiceWebsite.ViewModels.WebSite.NestpayPaymentModel
+
+@{ 
+    Layout = "";
+}
+
+<html>
+<head></head>
+<body>
+<form id="bankform" action="@(Model.ActionUrl)" method="post">
+    @Html.HiddenFor(m => m.clientid)
+    @Html.HiddenFor(m => m.storetype)
+    @Html.HiddenFor(m => m.hash)
+    @Html.HiddenFor(m => m.islemtipi)
+    @Html.HiddenFor(m => m.amount)
+    @Html.HiddenFor(m => m.currency)
+    @Html.HiddenFor(m => m.oid)
+    @Html.HiddenFor(m => m.okUrl)
+    @Html.HiddenFor(m => m.failUrl)
+    @Html.HiddenFor(m => m.lang)
+    @Html.HiddenFor(m => m.rnd)
+    @Html.HiddenFor(m => m.pan)
+    @Html.HiddenFor(m => m.cv2)
+    @if (!string.IsNullOrEmpty(Model.taksit))
+    {
+        @Html.HiddenFor(m => m.taksit)
+    }
+    @Html.HiddenFor(m => m.Ecom_Payment_Card_ExpDate_Year)
+    @Html.HiddenFor(m => m.Ecom_Payment_Card_ExpDate_Month)
+</form>
+<script>
+    document.getElementById("bankform").submit();
+</script>
+</body>
+</html>

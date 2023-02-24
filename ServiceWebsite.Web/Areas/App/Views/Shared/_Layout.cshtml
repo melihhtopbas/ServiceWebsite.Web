@@ -1,0 +1,89 @@
+﻿@using ServiceWebsite.Localization.WebSiteViewItems
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+    <!-- BASE CSS -->
+    <link href="~/Areas/App/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Areas/App/Content/css/menu.css" rel="stylesheet">
+    <link href="~/Areas/App/Content/css/style.css" rel="stylesheet">
+    <link href="~/Areas/App/Content/css/vendors.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="~/Areas/App/Content/css/custom.css" rel="stylesheet">
+    <script src="~/Areas/App/Scripts/js/jquery-3.2.1.min.js"></script>
+
+    <!-- MODERNIZR MENU -->
+    <script src="~/Areas/App/Scripts/js/modernizr.js"></script>
+</head>
+<body>
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div><!-- /Preload -->
+
+    <div id="loader_form">
+        <div data-loader="circle-side-2"></div>
+    </div><!-- /loader_form -->
+
+
+    <nav>
+        <ul class="cd-primary-nav">
+            <li><a href="@Url.Action("Index", "Home", new {lang = ViewBag.CurrentCultureTwoLetter})" class="animated_link">@WebSiteViewItems.HomePage</a></li>
+
+        </ul>
+    </nav>
+    @RenderBody()
+
+    <div class="cd-overlay-nav">
+        <span></span>
+    </div>
+    <!-- /cd-overlay-nav -->
+
+    <div class="cd-overlay-content">
+        <span></span>
+    </div>
+    <!-- /cd-overlay-content -->
+
+    <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+    <!-- /menu button -->
+    <!-- Modal terms -->
+    <!-- /.modal -->
+    <!-- COMMON SCRIPTS -->
+    <script src="~/Areas/App/Scripts/js/common_scripts.min.js"></script>
+    <script src="~/Areas/App/Scripts/js/velocity.min.js"></script>
+    <script src="~/Areas/App/Scripts/js/functions.js"></script>
+
+    <!-- Wizard script -->
+    <script src="~/Areas/App/Scripts/js/survey_func.js"></script>
+    <script src="~/Areas/App/Scripts/js/parallax.min.js"></script>
+    <script src="~/Areas/App/Scripts/js/owl-carousel.js"></script>
+    <script>
+        "use strict";
+        $(".team-carousel").owlCarousel({
+
+            navigation: true, // Show next and prev buttons
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            singleItem: true,
+            items: 1,
+            autoplay: true,
+            loop: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true
+        });
+
+    </script>
+</body>
+</html>

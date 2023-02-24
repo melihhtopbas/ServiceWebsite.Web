@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2f9d12b97e654e8ca73a061a73a99d7c" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="LegalityAnalysisModel.About" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.BlogCategories" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.BlogImages" Width="1.5" PointX="7.5" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Blogs" Width="1.5" PointX="5.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.BlogTagMapping" Width="1.5" PointX="7.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.BlogTags" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.ContactForm" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.CustomerAttribute" Width="1.5" PointX="5.375" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.CustomerComments" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.FAQ" Width="1.5" PointX="8.25" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.FAQCategories" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Gallery" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Keyword" Width="1.5" PointX="3" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Languages" Width="1.5" PointX="0.75" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Pages" Width="1.5" PointX="3" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Properties" Width="1.5" PointX="3" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.References" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.SearchKeyword" Width="1.5" PointX="5.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.ServiceCategories" Width="1.5" PointX="3" PointY="34.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.ServiceImages" Width="1.5" PointX="7.5" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Services" Width="1.5" PointX="5.25" PointY="30.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Settings" Width="1.5" PointX="3" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Sliders" Width="1.5" PointX="3" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.User" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.WebsiteFiles" Width="1.5" PointX="5.25" PointY="27.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.Websites" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_About_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_BlogCategories_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Blogs_BlogCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_BlogImages_Blogs" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Blogs_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_BlogTagMapping_Blogs" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_BlogTagMapping_BlogTags" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_BlogTags_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_FAQ_FAQCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_FAQ_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_FAQCategories_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Keyword_Keyword" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_SearchKeyword_Keyword" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_WebsiteFiles_Keyword" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Pages_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Properties_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_ServiceCategories_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Services_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Settings_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Sliders_Languages" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_ServiceCategories_ServiceCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_Services_ServiceCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_ServiceImages_Services" ManuallyRouted="false" />
+        <AssociationConnector Association="LegalityAnalysisModel.FK_WebsiteFiles_Websites" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LegalityAnalysisModel.CustomerPosPayment" Width="1.5" PointX="0.75" PointY="5.125" />
+        <AssociationConnector Association="LegalityAnalysisModel.CustomerPosPaymentsWebsites" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

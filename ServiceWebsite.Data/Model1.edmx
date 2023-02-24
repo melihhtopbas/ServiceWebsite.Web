@@ -1,0 +1,1944 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LegalityAnalysisModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="LegalityAnalysisModelStoreContainer">
+    <EntitySet Name="About" EntityType="LegalityAnalysisModel.Store.About" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogCategories" EntityType="LegalityAnalysisModel.Store.BlogCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogImages" EntityType="LegalityAnalysisModel.Store.BlogImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Blogs" EntityType="LegalityAnalysisModel.Store.Blogs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogTagMapping" EntityType="LegalityAnalysisModel.Store.BlogTagMapping" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogTags" EntityType="LegalityAnalysisModel.Store.BlogTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactForm" EntityType="LegalityAnalysisModel.Store.ContactForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerAttribute" EntityType="LegalityAnalysisModel.Store.CustomerAttribute" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerComments" EntityType="LegalityAnalysisModel.Store.CustomerComments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FAQ" EntityType="LegalityAnalysisModel.Store.FAQ" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FAQCategories" EntityType="LegalityAnalysisModel.Store.FAQCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Gallery" EntityType="LegalityAnalysisModel.Store.Gallery" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Keyword" EntityType="LegalityAnalysisModel.Store.Keyword" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Languages" EntityType="LegalityAnalysisModel.Store.Languages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pages" EntityType="LegalityAnalysisModel.Store.Pages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Properties" EntityType="LegalityAnalysisModel.Store.Properties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="References" EntityType="LegalityAnalysisModel.Store.References" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SearchKeyword" EntityType="LegalityAnalysisModel.Store.SearchKeyword" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServiceCategories" EntityType="LegalityAnalysisModel.Store.ServiceCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ServiceImages" EntityType="LegalityAnalysisModel.Store.ServiceImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Services" EntityType="LegalityAnalysisModel.Store.Services" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Settings" EntityType="LegalityAnalysisModel.Store.Settings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sliders" EntityType="LegalityAnalysisModel.Store.Sliders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="LegalityAnalysisModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebsiteFiles" EntityType="LegalityAnalysisModel.Store.WebsiteFiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Websites" EntityType="LegalityAnalysisModel.Store.Websites" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerPosPayments" EntityType="LegalityAnalysisModel.Store.CustomerPosPayments" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_About_Languages" Association="LegalityAnalysisModel.Store.FK_About_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="About" EntitySet="About" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogCategories_Languages" Association="LegalityAnalysisModel.Store.FK_BlogCategories_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="BlogCategories" EntitySet="BlogCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blogs_BlogCategories" Association="LegalityAnalysisModel.Store.FK_Blogs_BlogCategories">
+      <End Role="BlogCategories" EntitySet="BlogCategories" />
+      <End Role="Blogs" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogImages_Blogs" Association="LegalityAnalysisModel.Store.FK_BlogImages_Blogs">
+      <End Role="Blogs" EntitySet="Blogs" />
+      <End Role="BlogImages" EntitySet="BlogImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blogs_Languages" Association="LegalityAnalysisModel.Store.FK_Blogs_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Blogs" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogTagMapping_Blogs" Association="LegalityAnalysisModel.Store.FK_BlogTagMapping_Blogs">
+      <End Role="Blogs" EntitySet="Blogs" />
+      <End Role="BlogTagMapping" EntitySet="BlogTagMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogTagMapping_BlogTags" Association="LegalityAnalysisModel.Store.FK_BlogTagMapping_BlogTags">
+      <End Role="BlogTags" EntitySet="BlogTags" />
+      <End Role="BlogTagMapping" EntitySet="BlogTagMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogTags_Languages" Association="LegalityAnalysisModel.Store.FK_BlogTags_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="BlogTags" EntitySet="BlogTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FAQ_FAQCategories" Association="LegalityAnalysisModel.Store.FK_FAQ_FAQCategories">
+      <End Role="FAQCategories" EntitySet="FAQCategories" />
+      <End Role="FAQ" EntitySet="FAQ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FAQ_Languages" Association="LegalityAnalysisModel.Store.FK_FAQ_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="FAQ" EntitySet="FAQ" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FAQCategories_Languages" Association="LegalityAnalysisModel.Store.FK_FAQCategories_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="FAQCategories" EntitySet="FAQCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Keyword_Keyword" Association="LegalityAnalysisModel.Store.FK_Keyword_Keyword">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Keyword" EntitySet="Keyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SearchKeyword_Keyword" Association="LegalityAnalysisModel.Store.FK_SearchKeyword_Keyword">
+      <End Role="Keyword" EntitySet="Keyword" />
+      <End Role="SearchKeyword" EntitySet="SearchKeyword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteFiles_Keyword" Association="LegalityAnalysisModel.Store.FK_WebsiteFiles_Keyword">
+      <End Role="Keyword" EntitySet="Keyword" />
+      <End Role="WebsiteFiles" EntitySet="WebsiteFiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pages_Languages" Association="LegalityAnalysisModel.Store.FK_Pages_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Pages" EntitySet="Pages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_Languages" Association="LegalityAnalysisModel.Store.FK_Properties_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceCategories_Languages" Association="LegalityAnalysisModel.Store.FK_ServiceCategories_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="ServiceCategories" EntitySet="ServiceCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_Languages" Association="LegalityAnalysisModel.Store.FK_Services_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Settings_Languages" Association="LegalityAnalysisModel.Store.FK_Settings_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Settings" EntitySet="Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sliders_Languages" Association="LegalityAnalysisModel.Store.FK_Sliders_Languages">
+      <End Role="Languages" EntitySet="Languages" />
+      <End Role="Sliders" EntitySet="Sliders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceCategories_ServiceCategories" Association="LegalityAnalysisModel.Store.FK_ServiceCategories_ServiceCategories">
+      <End Role="ServiceCategories" EntitySet="ServiceCategories" />
+      <End Role="ServiceCategories1" EntitySet="ServiceCategories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_ServiceCategories" Association="LegalityAnalysisModel.Store.FK_Services_ServiceCategories">
+      <End Role="ServiceCategories" EntitySet="ServiceCategories" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServiceImages_Services" Association="LegalityAnalysisModel.Store.FK_ServiceImages_Services">
+      <End Role="Services" EntitySet="Services" />
+      <End Role="ServiceImages" EntitySet="ServiceImages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteFiles_Websites" Association="LegalityAnalysisModel.Store.FK_WebsiteFiles_Websites">
+      <End Role="Websites" EntitySet="Websites" />
+      <End Role="WebsiteFiles" EntitySet="WebsiteFiles" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerPosPaymentsWebsites" Association="LegalityAnalysisModel.Store.CustomerPosPaymentsWebsites">
+      <End Role="CustomerPosPayments" EntitySet="CustomerPosPayments" />
+      <End Role="Websites" EntitySet="Websites" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="Vision" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Mission" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FileName2" Type="nvarchar" Nullable="true" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="BlogCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="Alt" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="BlogId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blogs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ShortDescription" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="false" />
+    <Property Name="SeoTitle" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="SeoKeywords" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="SeoDescription" Type="nvarchar" Nullable="true" MaxLength="300" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogTagMapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TagId" Type="bigint" Nullable="false" />
+    <Property Name="BlogId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ContactForm">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Subject" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Mail" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Message" Type="nvarchar" Nullable="true" MaxLength="1000" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="IsRequired" Type="bit" Nullable="false" />
+    <Property Name="AttributeControlTypeId" Type="int" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="ResourceValue" Type="nvarchar" Nullable="false" MaxLength="400" />
+    <Property Name="DefaultValue" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CustomerComments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="FAQ">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="true" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="FAQCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="Keyword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="ImageUrl" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Price" Type="decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="DocumentTemplate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Languages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ShortName" Type="nvarchar" Nullable="false" MaxLength="5" />
+    <Property Name="CultureInfo" Type="nvarchar" Nullable="false" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Pages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ShortDescription" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="Icon" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="References">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="SearchKeyword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="KeywordType" Type="int" Nullable="false" />
+    <Property Name="KeywordId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ParentId" Type="bigint" Nullable="true" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="ShowOnHomePage" Type="bit" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="true" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="ServiceImages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="Alt" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="ServiceId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ShortDescription" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="true" />
+    <Property Name="Link" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="SeoTitle" Type="nvarchar" Nullable="true" MaxLength="60" />
+    <Property Name="SeoKeywords" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="SeoDescription" Type="nvarchar" Nullable="true" MaxLength="300" />
+    <Property Name="Icon" Type="nvarchar" Nullable="true" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="Settings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Logo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Favicon" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Meta" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Keywords" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="Maps" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Facebook" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Twitter" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Instagram" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Youtube" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Gplus" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Adress" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Phone2" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Analytics" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Copyright" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sliders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="SortOrder" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="Alt" Type="nvarchar" Nullable="true" MaxLength="80" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="LanguageId" Type="bigint" Nullable="false" />
+    <Property Name="ButtonText1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ButtonText2" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ButtonText3" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ButtonText4" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ButtonLink1" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="ButtonLink2" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="ButtonLink3" Type="nvarchar" Nullable="true" MaxLength="200" />
+    <Property Name="ButtonLink4" Type="nvarchar" Nullable="true" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WebsiteFiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileName" Type="nchar" Nullable="true" MaxLength="250" />
+    <Property Name="KeywordId" Type="bigint" Nullable="true" />
+    <Property Name="Result" Type="bit" Nullable="true" />
+    <Property Name="WebsiteId" Type="bigint" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Websites">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Website" Type="nvarchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="CustomerPosPayments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+    <Property Name="CreditCardMaskedNumber" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ExpireYear" Type="smallint" Nullable="false" />
+    <Property Name="ExpireMonth" Type="tinyint" Nullable="false" />
+    <Property Name="ClientIp" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="PaymentAmount" Type="decimal" Nullable="false" Precision="12" Scale="2" />
+    <Property Name="PaymentResult" Type="tinyint" Nullable="false" />
+    <Property Name="ResultMessage" Type="nvarchar" Nullable="true" MaxLength="500" />
+    <Property Name="TransactionId" Type="nvarchar" Nullable="false" MaxLength="80" />
+    <Property Name="WebsitesId" Type="bigint" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_About_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="About" Type="LegalityAnalysisModel.Store.About" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="About">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogCategories_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="BlogCategories" Type="LegalityAnalysisModel.Store.BlogCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogCategories">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blogs_BlogCategories">
+    <End Role="BlogCategories" Type="LegalityAnalysisModel.Store.BlogCategories" Multiplicity="1" />
+    <End Role="Blogs" Type="LegalityAnalysisModel.Store.Blogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blogs">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogImages_Blogs">
+    <End Role="Blogs" Type="LegalityAnalysisModel.Store.Blogs" Multiplicity="1" />
+    <End Role="BlogImages" Type="LegalityAnalysisModel.Store.BlogImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blogs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogImages">
+        <PropertyRef Name="BlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blogs_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="Blogs" Type="LegalityAnalysisModel.Store.Blogs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blogs">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogTagMapping_Blogs">
+    <End Role="Blogs" Type="LegalityAnalysisModel.Store.Blogs" Multiplicity="1" />
+    <End Role="BlogTagMapping" Type="LegalityAnalysisModel.Store.BlogTagMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blogs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogTagMapping">
+        <PropertyRef Name="BlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogTagMapping_BlogTags">
+    <End Role="BlogTags" Type="LegalityAnalysisModel.Store.BlogTags" Multiplicity="1" />
+    <End Role="BlogTagMapping" Type="LegalityAnalysisModel.Store.BlogTagMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogTags">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogTagMapping">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogTags_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="BlogTags" Type="LegalityAnalysisModel.Store.BlogTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogTags">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FAQ_FAQCategories">
+    <End Role="FAQCategories" Type="LegalityAnalysisModel.Store.FAQCategories" Multiplicity="0..1" />
+    <End Role="FAQ" Type="LegalityAnalysisModel.Store.FAQ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FAQCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FAQ">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FAQ_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="FAQ" Type="LegalityAnalysisModel.Store.FAQ" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FAQ">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FAQCategories_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="FAQCategories" Type="LegalityAnalysisModel.Store.FAQCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FAQCategories">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Keyword_Keyword">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="Keyword" Type="LegalityAnalysisModel.Store.Keyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Keyword">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SearchKeyword_Keyword">
+    <End Role="Keyword" Type="LegalityAnalysisModel.Store.Keyword" Multiplicity="1" />
+    <End Role="SearchKeyword" Type="LegalityAnalysisModel.Store.SearchKeyword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SearchKeyword">
+        <PropertyRef Name="KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteFiles_Keyword">
+    <End Role="Keyword" Type="LegalityAnalysisModel.Store.Keyword" Multiplicity="0..1" />
+    <End Role="WebsiteFiles" Type="LegalityAnalysisModel.Store.WebsiteFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Keyword">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteFiles">
+        <PropertyRef Name="KeywordId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pages_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="Pages" Type="LegalityAnalysisModel.Store.Pages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pages">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="Properties" Type="LegalityAnalysisModel.Store.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceCategories_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="ServiceCategories" Type="LegalityAnalysisModel.Store.ServiceCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceCategories">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="Services" Type="LegalityAnalysisModel.Store.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Settings_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="Settings" Type="LegalityAnalysisModel.Store.Settings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Settings">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sliders_Languages">
+    <End Role="Languages" Type="LegalityAnalysisModel.Store.Languages" Multiplicity="1" />
+    <End Role="Sliders" Type="LegalityAnalysisModel.Store.Sliders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Languages">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sliders">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceCategories_ServiceCategories">
+    <End Role="ServiceCategories" Type="LegalityAnalysisModel.Store.ServiceCategories" Multiplicity="0..1" />
+    <End Role="ServiceCategories1" Type="LegalityAnalysisModel.Store.ServiceCategories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceCategories1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_ServiceCategories">
+    <End Role="ServiceCategories" Type="LegalityAnalysisModel.Store.ServiceCategories" Multiplicity="0..1" />
+    <End Role="Services" Type="LegalityAnalysisModel.Store.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServiceImages_Services">
+    <End Role="Services" Type="LegalityAnalysisModel.Store.Services" Multiplicity="1" />
+    <End Role="ServiceImages" Type="LegalityAnalysisModel.Store.ServiceImages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Services">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceImages">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteFiles_Websites">
+    <End Role="Websites" Type="LegalityAnalysisModel.Store.Websites" Multiplicity="0..1" />
+    <End Role="WebsiteFiles" Type="LegalityAnalysisModel.Store.WebsiteFiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteFiles">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerPosPaymentsWebsites">
+    <End Role="CustomerPosPayments" Type="LegalityAnalysisModel.Store.CustomerPosPayments" Multiplicity="*" />
+    <End Role="Websites" Type="LegalityAnalysisModel.Store.Websites" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Websites">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CustomerPosPayments">
+        <PropertyRef Name="WebsitesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LegalityAnalysisModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Vision" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Mission" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileName2" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_About_Languages" FromRole="About" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="BlogCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_BlogCategories_Languages" FromRole="BlogCategories" ToRole="Languages" />
+          <NavigationProperty Name="Blogs" Relationship="Self.FK_Blogs_BlogCategories" FromRole="BlogCategories" ToRole="Blogs" />
+        </EntityType>
+        <EntityType Name="BlogImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Alt" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="BlogId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Blogs" Relationship="Self.FK_BlogImages_Blogs" FromRole="BlogImages" ToRole="Blogs" />
+        </EntityType>
+        <EntityType Name="Blogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="CategoryId" Type="Int64" Nullable="false" />
+          <Property Name="SeoTitle" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SeoKeywords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SeoDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="BlogCategories" Relationship="Self.FK_Blogs_BlogCategories" FromRole="Blogs" ToRole="BlogCategories" />
+          <NavigationProperty Name="BlogImages" Relationship="Self.FK_BlogImages_Blogs" FromRole="Blogs" ToRole="BlogImages" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Blogs_Languages" FromRole="Blogs" ToRole="Languages" />
+          <NavigationProperty Name="BlogTagMapping" Relationship="Self.FK_BlogTagMapping_Blogs" FromRole="Blogs" ToRole="BlogTagMapping" />
+        </EntityType>
+        <EntityType Name="BlogTagMapping">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TagId" Type="Int64" Nullable="false" />
+          <Property Name="BlogId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Blogs" Relationship="Self.FK_BlogTagMapping_Blogs" FromRole="BlogTagMapping" ToRole="Blogs" />
+          <NavigationProperty Name="BlogTags" Relationship="Self.FK_BlogTagMapping_BlogTags" FromRole="BlogTagMapping" ToRole="BlogTags" />
+        </EntityType>
+        <EntityType Name="BlogTags">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="BlogTagMapping" Relationship="Self.FK_BlogTagMapping_BlogTags" FromRole="BlogTags" ToRole="BlogTagMapping" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_BlogTags_Languages" FromRole="BlogTags" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="ContactForm">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Mail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="CustomerAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsRequired" Type="Boolean" Nullable="false" />
+          <Property Name="AttributeControlTypeId" Type="LegalityAnalysisModel.AttributeControlType" Nullable="false" />
+          <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+          <Property Name="ResourceValue" Type="String" MaxLength="400" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DefaultValue" Type="String" MaxLength="Max" Nullable="true" />
+        </EntityType>
+        <EntityType Name="CustomerComments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FAQ">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CategoryId" Type="Int64" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FAQCategories" Relationship="Self.FK_FAQ_FAQCategories" FromRole="FAQ" ToRole="FAQCategories" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_FAQ_Languages" FromRole="FAQ" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="FAQCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FAQ" Relationship="Self.FK_FAQ_FAQCategories" FromRole="FAQCategories" ToRole="FAQ" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_FAQCategories_Languages" FromRole="FAQCategories" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="Gallery">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Keyword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DocumentTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Keyword_Keyword" FromRole="Keyword" ToRole="Languages" />
+          <NavigationProperty Name="SearchKeyword" Relationship="Self.FK_SearchKeyword_Keyword" FromRole="Keyword" ToRole="SearchKeyword" />
+          <NavigationProperty Name="WebsiteFiles" Relationship="Self.FK_WebsiteFiles_Keyword" FromRole="Keyword" ToRole="WebsiteFiles" />
+        </EntityType>
+        <EntityType Name="Languages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShortName" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CultureInfo" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="About" Relationship="Self.FK_About_Languages" FromRole="Languages" ToRole="About" />
+          <NavigationProperty Name="BlogCategories" Relationship="Self.FK_BlogCategories_Languages" FromRole="Languages" ToRole="BlogCategories" />
+          <NavigationProperty Name="Blogs" Relationship="Self.FK_Blogs_Languages" FromRole="Languages" ToRole="Blogs" />
+          <NavigationProperty Name="BlogTags" Relationship="Self.FK_BlogTags_Languages" FromRole="Languages" ToRole="BlogTags" />
+          <NavigationProperty Name="FAQ" Relationship="Self.FK_FAQ_Languages" FromRole="Languages" ToRole="FAQ" />
+          <NavigationProperty Name="FAQCategories" Relationship="Self.FK_FAQCategories_Languages" FromRole="Languages" ToRole="FAQCategories" />
+          <NavigationProperty Name="Keyword" Relationship="Self.FK_Keyword_Keyword" FromRole="Languages" ToRole="Keyword" />
+          <NavigationProperty Name="Pages" Relationship="Self.FK_Pages_Languages" FromRole="Languages" ToRole="Pages" />
+          <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_Languages" FromRole="Languages" ToRole="Properties" />
+          <NavigationProperty Name="ServiceCategories" Relationship="Self.FK_ServiceCategories_Languages" FromRole="Languages" ToRole="ServiceCategories" />
+          <NavigationProperty Name="Services" Relationship="Self.FK_Services_Languages" FromRole="Languages" ToRole="Services" />
+          <NavigationProperty Name="Settings" Relationship="Self.FK_Settings_Languages" FromRole="Languages" ToRole="Settings" />
+          <NavigationProperty Name="Sliders" Relationship="Self.FK_Sliders_Languages" FromRole="Languages" ToRole="Sliders" />
+        </EntityType>
+        <EntityType Name="Pages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Pages_Languages" FromRole="Pages" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="Properties">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Properties_Languages" FromRole="Properties" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="References">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SearchKeyword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KeywordType" Type="LegalityAnalysisModel.SearchKeywordType" Nullable="false" />
+          <Property Name="KeywordId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Keyword" Relationship="Self.FK_SearchKeyword_Keyword" FromRole="SearchKeyword" ToRole="Keyword" />
+        </EntityType>
+        <EntityType Name="ServiceCategories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ParentId" Type="Int64" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="ShowOnHomePage" Type="Boolean" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_ServiceCategories_Languages" FromRole="ServiceCategories" ToRole="Languages" />
+          <NavigationProperty Name="ServiceCategories1" Relationship="Self.FK_ServiceCategories_ServiceCategories" FromRole="ServiceCategories" ToRole="ServiceCategories1" />
+          <NavigationProperty Name="ServiceCategories2" Relationship="Self.FK_ServiceCategories_ServiceCategories" FromRole="ServiceCategories1" ToRole="ServiceCategories" />
+          <NavigationProperty Name="Services" Relationship="Self.FK_Services_ServiceCategories" FromRole="ServiceCategories" ToRole="Services" />
+        </EntityType>
+        <EntityType Name="ServiceImages">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Alt" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Services" Relationship="Self.FK_ServiceImages_Services" FromRole="ServiceImages" ToRole="Services" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int64" />
+          <Property Name="Link" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="SeoTitle" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="SeoKeywords" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SeoDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Services_Languages" FromRole="Services" ToRole="Languages" />
+          <NavigationProperty Name="ServiceCategories" Relationship="Self.FK_Services_ServiceCategories" FromRole="Services" ToRole="ServiceCategories" />
+          <NavigationProperty Name="ServiceImages" Relationship="Self.FK_ServiceImages_Services" FromRole="Services" ToRole="ServiceImages" />
+        </EntityType>
+        <EntityType Name="Settings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Favicon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Meta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Maps" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Twitter" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Instagram" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Youtube" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Gplus" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Analytics" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Copyright" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Settings_Languages" FromRole="Settings" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="Sliders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SortOrder" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Alt" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="LanguageId" Type="Int64" Nullable="false" />
+          <Property Name="ButtonText1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonText2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonText3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonText4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonLink1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonLink2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonLink3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonLink4" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Languages" Relationship="Self.FK_Sliders_Languages" FromRole="Sliders" ToRole="Languages" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WebsiteFiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="KeywordId" Type="Int64" />
+          <Property Name="Result" Type="Boolean" />
+          <Property Name="WebsiteId" Type="Int64" />
+          <NavigationProperty Name="Keyword" Relationship="Self.FK_WebsiteFiles_Keyword" FromRole="WebsiteFiles" ToRole="Keyword" />
+          <NavigationProperty Name="Websites" Relationship="Self.FK_WebsiteFiles_Websites" FromRole="WebsiteFiles" ToRole="Websites" />
+        </EntityType>
+        <EntityType Name="Websites">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Website" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="WebsiteFiles" Relationship="Self.FK_WebsiteFiles_Websites" FromRole="Websites" ToRole="WebsiteFiles" />
+          <NavigationProperty Name="CustomerPosPayments" Relationship="LegalityAnalysisModel.CustomerPosPaymentsWebsites" FromRole="Websites" ToRole="CustomerPosPayments" />
+        </EntityType>
+        <Association Name="FK_About_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="About" Type="Self.About" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="About">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogCategories_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="BlogCategories" Type="Self.BlogCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogCategories">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Blogs_BlogCategories">
+          <End Role="BlogCategories" Type="Self.BlogCategories" Multiplicity="1" />
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Blogs">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogImages_Blogs">
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="1" />
+          <End Role="BlogImages" Type="Self.BlogImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blogs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogImages">
+              <PropertyRef Name="BlogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Blogs_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Blogs">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogTagMapping_Blogs">
+          <End Role="Blogs" Type="Self.Blogs" Multiplicity="1" />
+          <End Role="BlogTagMapping" Type="Self.BlogTagMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blogs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogTagMapping">
+              <PropertyRef Name="BlogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogTagMapping_BlogTags">
+          <End Role="BlogTags" Type="Self.BlogTags" Multiplicity="1" />
+          <End Role="BlogTagMapping" Type="Self.BlogTagMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogTags">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogTagMapping">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogTags_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="BlogTags" Type="Self.BlogTags" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogTags">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAQ_FAQCategories">
+          <End Role="FAQCategories" Type="Self.FAQCategories" Multiplicity="0..1" />
+          <End Role="FAQ" Type="Self.FAQ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FAQCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FAQ">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAQ_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="FAQ" Type="Self.FAQ" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FAQ">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FAQCategories_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="FAQCategories" Type="Self.FAQCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FAQCategories">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keyword_Keyword">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Keyword" Type="Self.Keyword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Keyword">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SearchKeyword_Keyword">
+          <End Role="Keyword" Type="Self.Keyword" Multiplicity="1" />
+          <End Role="SearchKeyword" Type="Self.SearchKeyword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Keyword">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SearchKeyword">
+              <PropertyRef Name="KeywordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteFiles_Keyword">
+          <End Role="Keyword" Type="Self.Keyword" Multiplicity="0..1" />
+          <End Role="WebsiteFiles" Type="Self.WebsiteFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Keyword">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteFiles">
+              <PropertyRef Name="KeywordId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pages_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Pages" Type="Self.Pages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pages">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceCategories_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="ServiceCategories" Type="Self.ServiceCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServiceCategories">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Services" Type="Self.Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Settings_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Settings" Type="Self.Settings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Settings">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sliders_Languages">
+          <End Role="Languages" Type="Self.Languages" Multiplicity="1" />
+          <End Role="Sliders" Type="Self.Sliders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Languages">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sliders">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceCategories_ServiceCategories">
+          <End Role="ServiceCategories" Type="Self.ServiceCategories" Multiplicity="0..1" />
+          <End Role="ServiceCategories1" Type="Self.ServiceCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServiceCategories1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Services_ServiceCategories">
+          <End Role="ServiceCategories" Type="Self.ServiceCategories" Multiplicity="0..1" />
+          <End Role="Services" Type="Self.Services" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceCategories">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Services">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ServiceImages_Services">
+          <End Role="Services" Type="Self.Services" Multiplicity="1" />
+          <End Role="ServiceImages" Type="Self.ServiceImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Services">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServiceImages">
+              <PropertyRef Name="ServiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WebsiteFiles_Websites">
+          <End Role="Websites" Type="Self.Websites" Multiplicity="0..1" />
+          <End Role="WebsiteFiles" Type="Self.WebsiteFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="WebsiteFiles">
+              <PropertyRef Name="WebsiteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WebSiteContextContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="About" EntityType="Self.About" />
+          <EntitySet Name="BlogCategories" EntityType="Self.BlogCategories" />
+          <EntitySet Name="BlogImages" EntityType="Self.BlogImages" />
+          <EntitySet Name="Blogs" EntityType="Self.Blogs" />
+          <EntitySet Name="BlogTagMapping" EntityType="Self.BlogTagMapping" />
+          <EntitySet Name="BlogTags" EntityType="Self.BlogTags" />
+          <EntitySet Name="ContactForm" EntityType="Self.ContactForm" />
+          <EntitySet Name="CustomerAttribute" EntityType="Self.CustomerAttribute" />
+          <EntitySet Name="CustomerComments" EntityType="Self.CustomerComments" />
+          <EntitySet Name="FAQ" EntityType="Self.FAQ" />
+          <EntitySet Name="FAQCategories" EntityType="Self.FAQCategories" />
+          <EntitySet Name="Gallery" EntityType="Self.Gallery" />
+          <EntitySet Name="Keyword" EntityType="Self.Keyword" />
+          <EntitySet Name="Languages" EntityType="Self.Languages" />
+          <EntitySet Name="Pages" EntityType="Self.Pages" />
+          <EntitySet Name="Properties" EntityType="Self.Properties" />
+          <EntitySet Name="References" EntityType="Self.References" />
+          <EntitySet Name="SearchKeyword" EntityType="Self.SearchKeyword" />
+          <EntitySet Name="ServiceCategories" EntityType="Self.ServiceCategories" />
+          <EntitySet Name="ServiceImages" EntityType="Self.ServiceImages" />
+          <EntitySet Name="Services" EntityType="Self.Services" />
+          <EntitySet Name="Settings" EntityType="Self.Settings" />
+          <EntitySet Name="Sliders" EntityType="Self.Sliders" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="WebsiteFiles" EntityType="Self.WebsiteFiles" />
+          <EntitySet Name="Websites" EntityType="Self.Websites" />
+          <AssociationSet Name="FK_About_Languages" Association="Self.FK_About_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="About" EntitySet="About" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogCategories_Languages" Association="Self.FK_BlogCategories_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="BlogCategories" EntitySet="BlogCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Blogs_BlogCategories" Association="Self.FK_Blogs_BlogCategories">
+            <End Role="BlogCategories" EntitySet="BlogCategories" />
+            <End Role="Blogs" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogImages_Blogs" Association="Self.FK_BlogImages_Blogs">
+            <End Role="Blogs" EntitySet="Blogs" />
+            <End Role="BlogImages" EntitySet="BlogImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Blogs_Languages" Association="Self.FK_Blogs_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Blogs" EntitySet="Blogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogTagMapping_Blogs" Association="Self.FK_BlogTagMapping_Blogs">
+            <End Role="Blogs" EntitySet="Blogs" />
+            <End Role="BlogTagMapping" EntitySet="BlogTagMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogTagMapping_BlogTags" Association="Self.FK_BlogTagMapping_BlogTags">
+            <End Role="BlogTags" EntitySet="BlogTags" />
+            <End Role="BlogTagMapping" EntitySet="BlogTagMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogTags_Languages" Association="Self.FK_BlogTags_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="BlogTags" EntitySet="BlogTags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAQ_FAQCategories" Association="Self.FK_FAQ_FAQCategories">
+            <End Role="FAQCategories" EntitySet="FAQCategories" />
+            <End Role="FAQ" EntitySet="FAQ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAQ_Languages" Association="Self.FK_FAQ_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="FAQ" EntitySet="FAQ" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FAQCategories_Languages" Association="Self.FK_FAQCategories_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="FAQCategories" EntitySet="FAQCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keyword_Keyword" Association="Self.FK_Keyword_Keyword">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Keyword" EntitySet="Keyword" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SearchKeyword_Keyword" Association="Self.FK_SearchKeyword_Keyword">
+            <End Role="Keyword" EntitySet="Keyword" />
+            <End Role="SearchKeyword" EntitySet="SearchKeyword" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteFiles_Keyword" Association="Self.FK_WebsiteFiles_Keyword">
+            <End Role="Keyword" EntitySet="Keyword" />
+            <End Role="WebsiteFiles" EntitySet="WebsiteFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pages_Languages" Association="Self.FK_Pages_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Pages" EntitySet="Pages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_Languages" Association="Self.FK_Properties_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Properties" EntitySet="Properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceCategories_Languages" Association="Self.FK_ServiceCategories_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="ServiceCategories" EntitySet="ServiceCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_Languages" Association="Self.FK_Services_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Services" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Settings_Languages" Association="Self.FK_Settings_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Settings" EntitySet="Settings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sliders_Languages" Association="Self.FK_Sliders_Languages">
+            <End Role="Languages" EntitySet="Languages" />
+            <End Role="Sliders" EntitySet="Sliders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceCategories_ServiceCategories" Association="Self.FK_ServiceCategories_ServiceCategories">
+            <End Role="ServiceCategories" EntitySet="ServiceCategories" />
+            <End Role="ServiceCategories1" EntitySet="ServiceCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Services_ServiceCategories" Association="Self.FK_Services_ServiceCategories">
+            <End Role="ServiceCategories" EntitySet="ServiceCategories" />
+            <End Role="Services" EntitySet="Services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ServiceImages_Services" Association="Self.FK_ServiceImages_Services">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="ServiceImages" EntitySet="ServiceImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WebsiteFiles_Websites" Association="Self.FK_WebsiteFiles_Websites">
+            <End Role="Websites" EntitySet="Websites" />
+            <End Role="WebsiteFiles" EntitySet="WebsiteFiles" />
+          </AssociationSet>
+          <EntitySet Name="CustomerPosPayments" EntityType="LegalityAnalysisModel.CustomerPosPayment" />
+          <AssociationSet Name="CustomerPosPaymentsWebsites" Association="LegalityAnalysisModel.CustomerPosPaymentsWebsites">
+            <End Role="CustomerPosPayments" EntitySet="CustomerPosPayments" />
+            <End Role="Websites" EntitySet="Websites" />
+          </AssociationSet>
+        </EntityContainer>
+        <EnumType Name="SearchKeywordType" a:ExternalTypeName="ServiceWebsite.Core.TypeCodes.SearchKeywordType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="AttributeControlType" a:ExternalTypeName="ServiceWebsite.Core.TypeCodes.AttributeControlType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="CustomerPosPayment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreditCardMaskedNumber" Type="String" Nullable="false" MaxLength="20" />
+          <Property Name="ExpireYear" Type="Int16" Nullable="false" />
+          <Property Name="ExpireMonth" Type="Byte" Nullable="false" />
+          <Property Name="ClientIp" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="PaymentAmount" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="PaymentResult" Type="LegalityAnalysisModel.PostPaymentResultEnum" Nullable="false" />
+          <Property Name="ResultMessage" Type="String" Nullable="true" MaxLength="500" />
+          <Property Name="TransactionId" Type="String" Nullable="false" MaxLength="80" />
+          <NavigationProperty Name="Websites" Relationship="LegalityAnalysisModel.CustomerPosPaymentsWebsites" FromRole="CustomerPosPayments" ToRole="Websites" />
+          <Property Name="WebsitesId" Type="Int64" Nullable="true" />
+        </EntityType>
+        <Association Name="CustomerPosPaymentsWebsites">
+          <End Type="LegalityAnalysisModel.CustomerPosPayment" Role="CustomerPosPayments" Multiplicity="*" />
+          <End Type="LegalityAnalysisModel.Websites" Role="Websites" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Websites">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CustomerPosPayments">
+              <PropertyRef Name="WebsitesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="PostPaymentResultEnum" UnderlyingType="Byte" a:ExternalTypeName="ServiceWebsite.Core.TypeCodes.PostPaymentResultEnum" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LegalityAnalysisModelStoreContainer" CdmEntityContainer="WebSiteContextContainer">
+    <EntitySetMapping Name="About">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.About)">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Vision" ColumnName="Vision" />
+          <ScalarProperty Name="Mission" ColumnName="Mission" />
+          <ScalarProperty Name="FileName2" ColumnName="FileName2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.BlogCategories)">
+        <MappingFragment StoreEntitySet="BlogCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogImages">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.BlogImages)">
+        <MappingFragment StoreEntitySet="BlogImages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Blogs)">
+        <MappingFragment StoreEntitySet="Blogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogTagMapping">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.BlogTagMapping)">
+        <MappingFragment StoreEntitySet="BlogTagMapping">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogTags">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.BlogTags)">
+        <MappingFragment StoreEntitySet="BlogTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactForm">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.ContactForm)">
+        <MappingFragment StoreEntitySet="ContactForm">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Mail" ColumnName="Mail" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerAttribute">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.CustomerAttribute)">
+        <MappingFragment StoreEntitySet="CustomerAttribute">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsRequired" ColumnName="IsRequired" />
+          <ScalarProperty Name="AttributeControlTypeId" ColumnName="AttributeControlTypeId" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="ResourceValue" ColumnName="ResourceValue" />
+          <ScalarProperty Name="DefaultValue" ColumnName="DefaultValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerComments">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.CustomerComments)">
+        <MappingFragment StoreEntitySet="CustomerComments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAQ">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.FAQ)">
+        <MappingFragment StoreEntitySet="FAQ">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FAQCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.FAQCategories)">
+        <MappingFragment StoreEntitySet="FAQCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gallery">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Gallery)">
+        <MappingFragment StoreEntitySet="Gallery">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Keyword">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Keyword)">
+        <MappingFragment StoreEntitySet="Keyword">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="DocumentTemplate" ColumnName="DocumentTemplate" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Languages)">
+        <MappingFragment StoreEntitySet="Languages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+          <ScalarProperty Name="CultureInfo" ColumnName="CultureInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Pages)">
+        <MappingFragment StoreEntitySet="Pages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Properties">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Properties)">
+        <MappingFragment StoreEntitySet="Properties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="References">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.References)">
+        <MappingFragment StoreEntitySet="References">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SearchKeyword">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.SearchKeyword)">
+        <MappingFragment StoreEntitySet="SearchKeyword">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="KeywordType" ColumnName="KeywordType" />
+          <ScalarProperty Name="KeywordId" ColumnName="KeywordId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceCategories">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.ServiceCategories)">
+        <MappingFragment StoreEntitySet="ServiceCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="ShowOnHomePage" ColumnName="ShowOnHomePage" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceImages">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.ServiceImages)">
+        <MappingFragment StoreEntitySet="ServiceImages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Services)">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Link" ColumnName="Link" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="SeoTitle" ColumnName="SeoTitle" />
+          <ScalarProperty Name="SeoKeywords" ColumnName="SeoKeywords" />
+          <ScalarProperty Name="SeoDescription" ColumnName="SeoDescription" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Settings">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Settings)">
+        <MappingFragment StoreEntitySet="Settings">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Favicon" ColumnName="Favicon" />
+          <ScalarProperty Name="Meta" ColumnName="Meta" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Maps" ColumnName="Maps" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Twitter" ColumnName="Twitter" />
+          <ScalarProperty Name="Instagram" ColumnName="Instagram" />
+          <ScalarProperty Name="Youtube" ColumnName="Youtube" />
+          <ScalarProperty Name="Gplus" ColumnName="Gplus" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Analytics" ColumnName="Analytics" />
+          <ScalarProperty Name="Copyright" ColumnName="Copyright" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Sliders)">
+        <MappingFragment StoreEntitySet="Sliders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="ButtonText1" ColumnName="ButtonText1" />
+          <ScalarProperty Name="ButtonText2" ColumnName="ButtonText2" />
+          <ScalarProperty Name="ButtonText3" ColumnName="ButtonText3" />
+          <ScalarProperty Name="ButtonText4" ColumnName="ButtonText4" />
+          <ScalarProperty Name="ButtonLink1" ColumnName="ButtonLink1" />
+          <ScalarProperty Name="ButtonLink2" ColumnName="ButtonLink2" />
+          <ScalarProperty Name="ButtonLink3" ColumnName="ButtonLink3" />
+          <ScalarProperty Name="ButtonLink4" ColumnName="ButtonLink4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteFiles">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.WebsiteFiles)">
+        <MappingFragment StoreEntitySet="WebsiteFiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="KeywordId" ColumnName="KeywordId" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="WebsiteId" ColumnName="WebsiteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Websites">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.Websites)">
+        <MappingFragment StoreEntitySet="Websites">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerPosPayments">
+      <EntityTypeMapping TypeName="IsTypeOf(LegalityAnalysisModel.CustomerPosPayment)">
+        <MappingFragment StoreEntitySet="CustomerPosPayments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="CreditCardMaskedNumber" ColumnName="CreditCardMaskedNumber" />
+          <ScalarProperty Name="ExpireYear" ColumnName="ExpireYear" />
+          <ScalarProperty Name="ExpireMonth" ColumnName="ExpireMonth" />
+          <ScalarProperty Name="ClientIp" ColumnName="ClientIp" />
+          <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+          <ScalarProperty Name="PaymentResult" ColumnName="PaymentResult" />
+          <ScalarProperty Name="ResultMessage" ColumnName="ResultMessage" />
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="WebsitesId" ColumnName="WebsitesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
